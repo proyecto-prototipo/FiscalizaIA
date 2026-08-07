@@ -1,0 +1,1532 @@
+.page {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.eyebrow {
+  color: #55d8eb;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+.hero h1 {
+  margin:
+    7px 0
+    5px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      28px,
+      3vw,
+      38px
+    );
+}
+
+.hero p {
+  margin: 0;
+
+  color: #82a2b1;
+
+  font-size: 12px;
+}
+
+
+.refreshButton {
+  min-height: 40px;
+
+  padding: 0 14px;
+
+  border:
+    1px solid
+    rgba(
+      77,
+      157,
+      186,
+      0.35
+    );
+
+  border-radius: 11px;
+
+  background:
+    rgba(
+      5,
+      28,
+      42,
+      0.8
+    );
+
+  color: #e4f5f8;
+
+  font: inherit;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.refreshButton:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+
+/* =========================================================
+   REALTIME
+========================================================= */
+
+.realtime {
+  min-height: 38px;
+
+  padding: 0 13px;
+
+  border:
+    1px solid
+    rgba(
+      70,
+      149,
+      178,
+      0.24
+    );
+
+  border-radius: 11px;
+
+  background:
+    rgba(
+      5,
+      29,
+      43,
+      0.65
+    );
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  color: #7797a5;
+
+  font-size: 9px;
+}
+
+.realtime span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #c3d9e1;
+
+  font-weight: 700;
+}
+
+.realtime i {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #63dfb8;
+
+  box-shadow:
+    0 0 8px
+    rgba(
+      99,
+      223,
+      184,
+      0.6
+    );
+}
+
+
+/* =========================================================
+   EMPRESA
+========================================================= */
+
+.companyPanel {
+  padding: 17px;
+
+  border:
+    1px solid
+    rgba(
+      71,
+      145,
+      174,
+      0.26
+    );
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        11,
+        42,
+        59,
+        0.96
+      ),
+      rgba(
+        6,
+        27,
+        41,
+        0.96
+      )
+    );
+
+  display: grid;
+
+  grid-template-columns:
+    auto
+    1fr
+    auto;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.companyIcon {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #54d7e9,
+      #6de3c1
+    );
+
+  color: #062937;
+
+  display: grid;
+
+  place-items: center;
+}
+
+
+.companyInfo {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.companyInfo small {
+  color: #6f92a1;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.7px;
+}
+
+.companyInfo strong {
+  color: #ffffff;
+
+  font-size: 16px;
+}
+
+.companyInfo span {
+  color: #7898a7;
+
+  font-size: 10px;
+}
+
+
+.companyStats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        80px,
+        1fr
+      )
+    );
+
+  gap: 8px;
+}
+
+.companyStats > div {
+  min-width: 90px;
+
+  padding: 10px 12px;
+
+  border:
+    1px solid
+    rgba(
+      71,
+      139,
+      165,
+      0.18
+    );
+
+  border-radius: 10px;
+
+  background:
+    rgba(
+      5,
+      27,
+      40,
+      0.5
+    );
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.companyStats span {
+  color: #708f9e;
+
+  font-size: 8px;
+}
+
+.companyStats strong {
+  color: #ffffff;
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   PANEL OPERACIONES
+========================================================= */
+
+.operationsPanel {
+  padding: 17px;
+
+  border:
+    1px solid
+    rgba(
+      72,
+      143,
+      173,
+      0.25
+    );
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        12,
+        38,
+        55,
+        0.96
+      ),
+      rgba(
+        7,
+        28,
+        42,
+        0.96
+      )
+    );
+}
+
+.panelHeader {
+  margin-bottom: 15px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.panelHeader > div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #55d8e9;
+}
+
+.panelHeader h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 14px;
+}
+
+.panelHeader p {
+  margin:
+    3px 0
+    0;
+
+  color: #6e8f9e;
+
+  font-size: 9px;
+}
+
+.panelHeader > span {
+  color: #7193a2;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.operationsScroll {
+  max-height: 520px;
+
+  padding-right: 5px;
+
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(
+      82,
+      215,
+      233,
+      0.45
+    )
+    rgba(
+      18,
+      52,
+      68,
+      0.35
+    );
+}
+
+.operationsScroll::-webkit-scrollbar {
+  width: 7px;
+}
+
+.operationsScroll::-webkit-scrollbar-track {
+  background:
+    rgba(
+      18,
+      52,
+      68,
+      0.35
+    );
+
+  border-radius: 20px;
+}
+
+.operationsScroll::-webkit-scrollbar-thumb {
+  background:
+    rgba(
+      82,
+      215,
+      233,
+      0.45
+    );
+
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   OPERATION CARD
+========================================================= */
+
+.operationCard {
+  padding: 15px;
+
+  border:
+    1px solid
+    rgba(
+      72,
+      139,
+      164,
+      0.2
+    );
+
+  border-radius: 13px;
+
+  background:
+    rgba(
+      5,
+      27,
+      41,
+      0.58
+    );
+}
+
+
+.operationHeader {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+
+.operationIdentity {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 11px;
+}
+
+
+.operationIcon {
+  width: 41px;
+  height: 41px;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background:
+    rgba(
+      76,
+      207,
+      226,
+      0.1
+    );
+
+  color: #56d8e9;
+
+  display: grid;
+
+  place-items: center;
+}
+
+
+.operationIdentity small {
+  color: #6d8f9d;
+
+  font-size: 8px;
+
+  text-transform: uppercase;
+}
+
+
+.operationIdentity h2 {
+  margin:
+    3px 0
+    2px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+}
+
+
+.operationIdentity span {
+  color: #7796a4;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.statusBadge {
+  padding:
+    6px
+    9px;
+
+  border-radius: 8px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.statusBadge i {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+}
+
+.activeStatus {
+  background:
+    rgba(
+      44,
+      148,
+      113,
+      0.14
+    );
+
+  color: #68ddb4;
+}
+
+.activeStatus i {
+  background: #68ddb4;
+}
+
+.inactiveStatus {
+  background:
+    rgba(
+      210,
+      83,
+      102,
+      0.14
+    );
+
+  color: #ef8998;
+}
+
+.inactiveStatus i {
+  background: #ef8998;
+}
+
+
+/* =========================================================
+   INFORMACIÓN
+========================================================= */
+
+.operationInformation {
+  margin-top: 14px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 9px;
+}
+
+.operationInformation > div {
+  min-height: 65px;
+
+  padding: 10px;
+
+  border:
+    1px solid
+    rgba(
+      69,
+      132,
+      158,
+      0.15
+    );
+
+  border-radius: 9px;
+
+  background:
+    rgba(
+      4,
+      23,
+      35,
+      0.45
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.infoIcon {
+  color: #56d6e8;
+}
+
+
+.operationInformation small {
+  color: #6e8f9e;
+
+  font-size: 8px;
+
+  display: block;
+}
+
+
+.operationInformation strong {
+  margin-top: 3px;
+
+  color: #dcecf2;
+
+  font-size: 10px;
+
+  display: block;
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+========================================================= */
+
+.description {
+  margin-top: 11px;
+
+  padding: 11px;
+
+  border-radius: 9px;
+
+  background:
+    rgba(
+      5,
+      23,
+      35,
+      0.45
+    );
+}
+
+.description > span {
+  color: #7193a1;
+
+  font-size: 8px;
+
+  text-transform: uppercase;
+}
+
+.description p {
+  margin:
+    5px 0
+    0;
+
+  color: #94acb7;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   MENSAJE
+========================================================= */
+
+.infoMessage {
+  padding: 13px;
+
+  border:
+    1px solid
+    rgba(
+      69,
+      183,
+      202,
+      0.2
+    );
+
+  border-radius: 11px;
+
+  background:
+    rgba(
+      20,
+      86,
+      101,
+      0.12
+    );
+
+  color: #55d5e6;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+}
+
+.infoMessage div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.infoMessage strong {
+  color: #dcebf0;
+
+  font-size: 10px;
+}
+
+.infoMessage span {
+  color: #7895a2;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   ERROR / EMPTY / LOADING
+========================================================= */
+
+.errorBanner {
+  padding: 11px 13px;
+
+  border:
+    1px solid
+    rgba(
+      236,
+      92,
+      113,
+      0.32
+    );
+
+  border-radius: 10px;
+
+  background:
+    rgba(
+      92,
+      26,
+      39,
+      0.5
+    );
+
+  color: #ffd0d9;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.errorBanner span {
+  flex: 1;
+}
+
+.errorBanner button {
+  border: 0;
+
+  background: none;
+
+  color: inherit;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+
+.empty,
+.loading {
+  min-height: 180px;
+
+  color: #6d8e9c;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.loading {
+  min-height: 65vh;
+}
+
+.empty strong,
+.loading strong {
+  color: #dcebf0;
+}
+
+.empty span,
+.loading span {
+  max-width: 480px;
+
+  font-size: 10px;
+}
+
+
+.loading button {
+  padding:
+    9px
+    14px;
+
+  border:
+    1px solid
+    rgba(
+      77,
+      203,
+      224,
+      0.35
+    );
+
+  border-radius: 9px;
+
+  background:
+    rgba(
+      7,
+      38,
+      53,
+      0.8
+    );
+
+  color: #e3f5f8;
+
+  cursor: pointer;
+}
+
+
+.spinner {
+  width: 36px;
+  height: 36px;
+
+  border:
+    3px solid
+    rgba(
+      75,
+      207,
+      227,
+      0.15
+    );
+
+  border-top-color:
+    #52d7e9;
+
+  border-radius: 50%;
+
+  animation:
+    rotate
+    0.8s
+    linear
+    infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform:
+      rotate(
+        360deg
+      );
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (
+  max-width: 950px
+) {
+  .companyPanel {
+    grid-template-columns:
+      auto
+      1fr;
+  }
+
+  .companyStats {
+    grid-column:
+      1 / -1;
+  }
+}
+
+
+@media (
+  max-width: 700px
+) {
+  .hero {
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+  }
+
+  .refreshButton {
+    align-self:
+      flex-start;
+  }
+
+  .operationHeader {
+    flex-direction:
+      column;
+  }
+
+  .operationInformation {
+    grid-template-columns:
+      1fr;
+  }
+
+  .operationsScroll {
+    max-height: 430px;
+  }
+}
+
+
+@media (
+  max-width: 520px
+) {
+  .companyPanel {
+    grid-template-columns:
+      1fr;
+  }
+
+  .companyIcon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .companyStats {
+    grid-template-columns:
+      1fr;
+  }
+
+  .realtime {
+    min-height: auto;
+
+    padding:
+      10px
+      12px;
+
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+    gap: 5px;
+  }
+
+  .hero h1 {
+    font-size: 27px;
+  }
+}
+
+
+
+/* =========================================================
+   MEJORA DE LEGIBILIDAD - MI OPERACIÓN
+   ESCALA CÓMODA PARA 100%
+========================================================= */
+
+/* ---------------------------------------------------------
+   HERO
+--------------------------------------------------------- */
+
+.eyebrow {
+  font-size: 12px;
+}
+
+.hero p {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.refreshButton {
+  min-height: 44px;
+  padding: 0 16px;
+
+  font-size: 13px;
+}
+
+
+/* ---------------------------------------------------------
+   REALTIME
+--------------------------------------------------------- */
+
+.realtime {
+  min-height: 42px;
+
+  padding: 0 15px;
+
+  font-size: 11px;
+}
+
+.realtime span {
+  font-size: 11px;
+}
+
+.realtime small {
+  font-size: 10px;
+}
+
+
+/* ---------------------------------------------------------
+   PANEL DE EMPRESA
+--------------------------------------------------------- */
+
+.companyPanel {
+  padding: 20px;
+
+  gap: 16px;
+}
+
+.companyIcon {
+  width: 54px;
+  height: 54px;
+
+  border-radius: 14px;
+}
+
+.companyInfo {
+  gap: 5px;
+}
+
+.companyInfo small {
+  font-size: 10px;
+}
+
+.companyInfo strong {
+  font-size: 19px;
+}
+
+.companyInfo span {
+  font-size: 12px;
+}
+
+
+/* ---------------------------------------------------------
+   ESTADÍSTICAS DE EMPRESA
+--------------------------------------------------------- */
+
+.companyStats {
+  gap: 10px;
+}
+
+.companyStats > div {
+  min-width: 100px;
+
+  min-height: 72px;
+
+  padding: 12px 14px;
+}
+
+.companyStats span {
+  font-size: 10px;
+}
+
+.companyStats strong {
+  font-size: 25px;
+}
+
+
+/* ---------------------------------------------------------
+   PANEL DE OPERACIONES
+--------------------------------------------------------- */
+
+.operationsPanel {
+  padding: 20px;
+}
+
+.panelHeader {
+  margin-bottom: 18px;
+}
+
+.panelHeader > div {
+  gap: 11px;
+}
+
+.panelHeader h2 {
+  font-size: 17px;
+}
+
+.panelHeader p {
+  margin-top: 4px;
+
+  font-size: 11px;
+
+  line-height: 1.45;
+}
+
+.panelHeader > span {
+  font-size: 11px;
+}
+
+
+/* ---------------------------------------------------------
+   SCROLL
+--------------------------------------------------------- */
+
+.operationsScroll {
+  max-height: 560px;
+
+  padding-right: 8px;
+
+  gap: 13px;
+}
+
+.operationsScroll::-webkit-scrollbar {
+  width: 9px;
+}
+
+
+/* ---------------------------------------------------------
+   TARJETA DE OPERACIÓN
+--------------------------------------------------------- */
+
+.operationCard {
+  padding: 18px;
+}
+
+.operationHeader {
+  gap: 18px;
+}
+
+.operationIdentity {
+  gap: 13px;
+}
+
+.operationIcon {
+  width: 46px;
+  height: 46px;
+
+  border-radius: 12px;
+}
+
+.operationIcon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.operationIdentity small {
+  font-size: 10px;
+
+  letter-spacing: 0.4px;
+}
+
+.operationIdentity h2 {
+  margin:
+    5px 0
+    4px;
+
+  font-size: 18px;
+
+  line-height: 1.3;
+}
+
+.operationIdentity span {
+  font-size: 11px;
+}
+
+
+/* ---------------------------------------------------------
+   ESTADO
+--------------------------------------------------------- */
+
+.statusBadge {
+  padding:
+    7px
+    10px;
+
+  font-size: 10px;
+}
+
+.statusBadge i {
+  width: 7px;
+  height: 7px;
+}
+
+
+/* ---------------------------------------------------------
+   INFORMACIÓN DE LA OPERACIÓN
+--------------------------------------------------------- */
+
+.operationInformation {
+  margin-top: 16px;
+
+  gap: 10px;
+}
+
+.operationInformation > div {
+  min-height: 76px;
+
+  padding: 12px;
+}
+
+.infoIcon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.operationInformation small {
+  font-size: 10px;
+}
+
+.operationInformation strong {
+  margin-top: 4px;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPCIÓN
+--------------------------------------------------------- */
+
+.description {
+  margin-top: 13px;
+
+  padding: 14px;
+}
+
+.description > span {
+  font-size: 10px;
+
+  letter-spacing: 0.3px;
+}
+
+.description p {
+  margin:
+    6px 0
+    0;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   MENSAJE INFORMATIVO
+--------------------------------------------------------- */
+
+.infoMessage {
+  padding: 15px;
+
+  gap: 11px;
+}
+
+.infoMessage > svg {
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+}
+
+.infoMessage div {
+  gap: 5px;
+}
+
+.infoMessage strong {
+  font-size: 12px;
+}
+
+.infoMessage span {
+  font-size: 11px;
+
+  line-height: 1.55;
+}
+
+
+/* ---------------------------------------------------------
+   ERROR / EMPTY / LOADING
+--------------------------------------------------------- */
+
+.errorBanner {
+  font-size: 12px;
+}
+
+.empty strong,
+.loading strong {
+  font-size: 15px;
+}
+
+.empty span,
+.loading span {
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.loading button {
+  min-height: 40px;
+
+  padding:
+    0
+    15px;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+  .companyInfo strong {
+    font-size: 18px;
+  }
+
+  .companyInfo span {
+    font-size: 11px;
+  }
+
+  .companyStats span {
+    font-size: 10px;
+  }
+
+  .panelHeader h2 {
+    font-size: 16px;
+  }
+
+  .operationIdentity h2 {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media (max-width: 700px) {
+  .eyebrow {
+    font-size: 11px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .companyPanel {
+    padding: 16px;
+  }
+
+  .companyInfo small {
+    font-size: 10px;
+  }
+
+  .companyInfo strong {
+    font-size: 17px;
+  }
+
+  .companyInfo span {
+    font-size: 11px;
+  }
+
+  .operationCard {
+    padding: 15px;
+  }
+
+  .operationIdentity h2 {
+    font-size: 16px;
+  }
+
+  .operationIdentity small,
+  .operationIdentity span {
+    font-size: 10px;
+  }
+
+  .statusBadge {
+    font-size: 10px;
+  }
+
+  .operationInformation small {
+    font-size: 10px;
+  }
+
+  .operationInformation strong {
+    font-size: 12px;
+  }
+
+  .description > span {
+    font-size: 10px;
+  }
+
+  .description p {
+    font-size: 12px;
+  }
+
+  .infoMessage strong {
+    font-size: 12px;
+  }
+
+  .infoMessage span {
+    font-size: 11px;
+  }
+
+  .operationsScroll {
+    max-height: 460px;
+  }
+}
+
+
+/* =========================================================
+   MÓVIL PEQUEÑO
+========================================================= */
+
+@media (max-width: 520px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .companyStats > div {
+    min-height: 68px;
+  }
+
+  .companyStats strong {
+    font-size: 23px;
+  }
+
+  .panelHeader h2 {
+    font-size: 16px;
+  }
+
+  .panelHeader p,
+  .panelHeader > span {
+    font-size: 10px;
+  }
+}

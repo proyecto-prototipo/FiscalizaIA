@@ -1,0 +1,419 @@
+.shell{min-height:100vh;display:grid;grid-template-columns:270px 1fr}
+.sidebar{position:sticky;top:0;height:100vh;padding:22px 16px;border-right:1px solid rgba(147,179,208,.15);background:linear-gradient(180deg,rgba(8,20,34,.99),rgba(7,17,31,.97));display:flex;flex-direction:column;z-index:30}
+.brand{display:flex;align-items:center;gap:12px;padding:4px 6px 18px}.brandMark{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;color:#07111f;background:linear-gradient(135deg,#55d9ff,#69e3b5)}.brand strong{display:block}.brand span{display:block;color:#8fa5ba;font-size:11px;letter-spacing:1.5px;text-transform:uppercase}.close{display:none;margin-left:auto;border:0;background:transparent;color:white}
+.rolePill{margin:0 6px 16px;padding:9px 11px;border:1px solid rgba(86,217,255,.2);border-radius:12px;color:#bdefff;background:rgba(86,217,255,.06);font-size:11px;text-transform:uppercase;letter-spacing:.8px}
+.sidebar nav{display:grid;gap:5px;overflow:auto}.sidebar nav a{display:flex;align-items:center;gap:11px;padding:11px 12px;border-radius:12px;color:#9fb2c6;font-size:14px;transition:.2s}.sidebar nav a:hover{color:white;background:rgba(255,255,255,.04)}.sidebar nav a.active{color:white;background:linear-gradient(90deg,rgba(86,217,255,.14),rgba(105,227,181,.05));border:1px solid rgba(86,217,255,.18);box-shadow:inset 3px 0 #55d9ff}
+.logout{margin-top:auto;border:1px solid rgba(147,179,208,.15);background:rgba(255,255,255,.02);color:#a9bacb;padding:11px 12px;border-radius:12px;display:flex;align-items:center;gap:10px}
+.main{min-width:0}.topbar{height:76px;position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid rgba(147,179,208,.15);backdrop-filter:blur(18px);background:rgba(6,16,29,.75)}.menuButton{display:none;border:0;background:transparent;color:white}.topCopy span{display:block;color:#8fa5ba;font-size:12px}.topCopy strong{font-size:15px}.topActions{display:flex;align-items:center;gap:12px}.iconButton{position:relative;width:40px;height:40px;border-radius:12px;border:1px solid rgba(147,179,208,.15);background:rgba(255,255,255,.03);color:#cde0f1}.iconButton i{position:absolute;width:7px;height:7px;border-radius:50%;background:#ff7b83;right:8px;top:8px}.avatar{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;font-weight:750;color:#07111f;background:linear-gradient(135deg,#77e4ff,#b6ffd6)}.userMeta strong,.userMeta span{display:block}.userMeta strong{font-size:13px}.userMeta span{font-size:11px;color:#8fa5ba}.content{padding:28px;max-width:1650px;margin:auto}.backdrop{display:none}
+@media(max-width:980px){.shell{grid-template-columns:1fr}.sidebar{position:fixed;left:-290px;width:270px;transition:.25s}.sidebar.open{left:0}.close,.menuButton{display:inline-flex}.backdrop{display:block;position:fixed;inset:0;z-index:25;border:0;background:rgba(0,0,0,.45)}}@media(max-width:680px){.topbar{padding:0 16px}.topCopy,.userMeta{display:none}.content{padding:18px 14px 28px}}
+
+
+
+/* =========================================================
+   IMPRESIÓN / PDF
+========================================================= */
+
+@media print {
+
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  html,
+  body {
+    width: 100% !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #ffffff !important;
+
+    color: #111827 !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =======================================================
+     OCULTAR ELEMENTOS QUE NO DEBEN IMPRIMIRSE
+  ======================================================= */
+
+  .noPrint,
+  .actions,
+  .filters,
+  .refreshButton,
+  .editButton,
+  .printButton,
+  .modalHeader button,
+  .modalFooter {
+    display: none !important;
+  }
+
+
+  /* =======================================================
+     CONTENEDOR GENERAL
+  ======================================================= */
+
+  .page {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #ffffff !important;
+
+    color: #111827 !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =======================================================
+     MODAL / PREVISUALIZACIÓN
+  ======================================================= */
+
+  .modalBackdrop {
+    position: static !important;
+
+    inset: auto !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background: transparent !important;
+
+    backdrop-filter: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  .modal {
+    position: static !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    height: auto !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    background: #ffffff !important;
+
+    color: #111827 !important;
+
+    overflow: visible !important;
+  }
+
+
+  .modalBody {
+    width: 100% !important;
+
+    max-height: none !important;
+
+    padding: 0 !important;
+
+    overflow: visible !important;
+
+    background: #ffffff !important;
+  }
+
+
+  /* =======================================================
+     REPORTE
+  ======================================================= */
+
+  .reportPreview,
+  .reportDocument,
+  .reportContent {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #ffffff !important;
+
+    color: #111827 !important;
+
+    box-shadow: none !important;
+
+    border: 0 !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =======================================================
+     TEXTOS
+  ======================================================= */
+
+  .reportPreview h1,
+  .reportPreview h2,
+  .reportPreview h3,
+  .reportPreview h4,
+  .reportDocument h1,
+  .reportDocument h2,
+  .reportDocument h3,
+  .reportDocument h4,
+  .reportContent h1,
+  .reportContent h2,
+  .reportContent h3,
+  .reportContent h4 {
+    color: #111827 !important;
+  }
+
+
+  .reportPreview p,
+  .reportPreview span,
+  .reportPreview strong,
+  .reportPreview small,
+  .reportPreview td,
+  .reportPreview th,
+  .reportDocument p,
+  .reportDocument span,
+  .reportDocument strong,
+  .reportDocument small,
+  .reportDocument td,
+  .reportDocument th,
+  .reportContent p,
+  .reportContent span,
+  .reportContent strong,
+  .reportContent small,
+  .reportContent td,
+  .reportContent th {
+    color: #1f2937 !important;
+  }
+
+
+  /* =======================================================
+     TARJETAS / BLOQUES
+  ======================================================= */
+
+  .card,
+  .resultCard,
+  .summaryCard,
+  .section,
+  .reportSection {
+    background: #ffffff !important;
+
+    color: #111827 !important;
+
+    border:
+      1px solid #d7dde3 !important;
+
+    box-shadow: none !important;
+
+    break-inside: avoid !important;
+
+    page-break-inside: avoid !important;
+  }
+
+
+  /* =======================================================
+     TABLAS
+  ======================================================= */
+
+  table {
+    width: 100% !important;
+
+    border-collapse: collapse !important;
+
+    background: #ffffff !important;
+  }
+
+
+  th,
+  td {
+    border:
+      1px solid #d7dde3 !important;
+
+    background: #ffffff !important;
+
+    color: #111827 !important;
+
+    padding: 7px !important;
+  }
+
+
+  thead {
+    display:
+      table-header-group !important;
+  }
+
+
+  tr {
+    break-inside:
+      avoid !important;
+
+    page-break-inside:
+      avoid !important;
+  }
+
+
+  /* =======================================================
+     GRÁFICOS / BARRAS
+  ======================================================= */
+
+  svg,
+  canvas {
+    max-width: 100% !important;
+
+    break-inside:
+      avoid !important;
+  }
+
+
+  /* =======================================================
+     EVITAR PÁGINAS VACÍAS
+  ======================================================= */
+
+  section,
+  article {
+    break-inside:
+      avoid-page;
+  }
+
+
+  /* =======================================================
+     COLORES DE IMPRESIÓN
+  ======================================================= */
+
+  * {
+    -webkit-print-color-adjust:
+      exact !important;
+
+    print-color-adjust:
+      exact !important;
+  }
+}
+
+
+
+/* =========================================================
+   IMPRESIÓN
+   Oculta completamente la interfaz general del sistema
+========================================================= */
+
+@media print {
+
+  /* =======================================================
+     SIDEBAR
+  ======================================================= */
+
+  .sidebar {
+    display: none !important;
+
+    visibility: hidden !important;
+
+    position: static !important;
+  }
+
+
+  /* =======================================================
+     HEADER SUPERIOR
+  ======================================================= */
+
+  .topbar {
+    display: none !important;
+
+    visibility: hidden !important;
+
+    position: static !important;
+
+    width: 0 !important;
+    height: 0 !important;
+
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* =======================================================
+     ELEMENTOS DEL HEADER
+  ======================================================= */
+
+  .menuButton,
+  .topCopy,
+  .topActions,
+  .iconButton,
+  .avatar,
+  .userMeta {
+    display: none !important;
+
+    visibility: hidden !important;
+  }
+
+
+  /* =======================================================
+     BACKDROP DEL SIDEBAR
+  ======================================================= */
+
+  .backdrop {
+    display: none !important;
+
+    visibility: hidden !important;
+  }
+
+
+  /* =======================================================
+     CONTENEDOR PRINCIPAL
+  ======================================================= */
+
+  .main {
+    position: static !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #ffffff !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =======================================================
+     CONTENIDO
+  ======================================================= */
+
+  .content {
+    position: static !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #ffffff !important;
+
+    overflow: visible !important;
+  }
+}

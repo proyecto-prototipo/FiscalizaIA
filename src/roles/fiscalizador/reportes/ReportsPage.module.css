@@ -1,0 +1,1832 @@
+/* =========================================================
+   REPORTS PAGE
+========================================================= */
+
+.page {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   ACCIONES
+========================================================= */
+
+.headerActions,
+.actions,
+.badges {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  flex-wrap: wrap;
+}
+
+
+.secondaryButton,
+.deleteButton {
+  min-height: 42px;
+
+  padding: 0 15px;
+
+  border:
+    1px solid
+    rgba(
+      81,
+      151,
+      181,
+      0.32
+    );
+
+  border-radius: 11px;
+
+  background:
+    rgba(
+      7,
+      28,
+      43,
+      0.88
+    );
+
+  color: #d9edf5;
+
+  font: inherit;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+
+.secondaryButton:hover {
+  border-color:
+    rgba(
+      86,
+      210,
+      229,
+      0.48
+    );
+
+  background:
+    rgba(
+      10,
+      39,
+      56,
+      0.95
+    );
+}
+
+
+.deleteButton {
+  border-color:
+    rgba(
+      241,
+      91,
+      116,
+      0.4
+    );
+
+  background:
+    rgba(
+      131,
+      31,
+      49,
+      0.88
+    );
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.errorBanner,
+.formError {
+  padding: 13px 15px;
+
+  border:
+    1px solid
+    rgba(
+      241,
+      91,
+      116,
+      0.36
+    );
+
+  border-radius: 12px;
+
+  background:
+    rgba(
+      87,
+      24,
+      37,
+      0.68
+    );
+
+  color: #ffd5dd;
+
+  font-size: 13px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.errorBanner span {
+  flex: 1;
+}
+
+
+.errorBanner button {
+  border: 0;
+
+  background: transparent;
+
+  color: inherit;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   RESUMEN
+========================================================= */
+
+.summaryGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      7,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 12px;
+}
+
+
+.summaryCard {
+  min-height: 115px;
+
+  padding: 16px;
+
+  border:
+    1px solid
+    rgba(
+      76,
+      148,
+      178,
+      0.27
+    );
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        13,
+        43,
+        61,
+        0.96
+      ),
+      rgba(
+        7,
+        27,
+        42,
+        0.96
+      )
+    );
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  color: #55d9ed;
+}
+
+
+.summaryCard span {
+  color: #b8d0dc;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+.summaryCard strong {
+  color: #ffffff;
+
+  font-size: 27px;
+}
+
+
+/* =========================================================
+   CABECERA DE SECCIONES
+========================================================= */
+
+.sectionHeader {
+  margin-bottom: 16px;
+}
+
+
+.sectionHeader h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 20px;
+}
+
+
+.sectionHeader p {
+  margin:
+    5px 0
+    0;
+
+  color: #7897a8;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CONTEXTO
+========================================================= */
+
+.contextGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 14px;
+}
+
+
+.contextCard {
+  padding: 17px;
+
+  border:
+    1px solid
+    rgba(
+      81,
+      148,
+      178,
+      0.26
+    );
+
+  border-radius: 15px;
+
+  background:
+    rgba(
+      7,
+      28,
+      43,
+      0.7
+    );
+}
+
+
+.contextCard h3 {
+  margin:
+    14px 0
+    6px;
+
+  color: #ffffff;
+
+  font-size: 16px;
+}
+
+
+.contextCard p {
+  margin: 0;
+
+  color: #8da8b6;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+.contextMetrics {
+  margin:
+    13px 0;
+
+  display: flex;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+
+  color: #7f9dab;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+.filters {
+  display: grid;
+
+  grid-template-columns:
+    minmax(
+      250px,
+      1.6fr
+    )
+    repeat(
+      5,
+      minmax(
+        145px,
+        1fr
+      )
+    );
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+}
+
+
+.searchField {
+  position: relative;
+}
+
+
+.searchField svg {
+  position: absolute;
+
+  top: 50%;
+  left: 13px;
+
+  color: #718f9f;
+
+  transform:
+    translateY(
+      -50%
+    );
+}
+
+
+.searchField input,
+.filters select,
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+
+  border:
+    1px solid
+    rgba(
+      88,
+      151,
+      180,
+      0.29
+    );
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background:
+    rgba(
+      5,
+      24,
+      38,
+      0.88
+    );
+
+  color: #edf8fb;
+
+  font: inherit;
+
+  font-size: 13px;
+}
+
+
+.searchField input,
+.filters select,
+.form input,
+.form select {
+  min-height: 44px;
+
+  padding:
+    0
+    13px;
+}
+
+
+.searchField input {
+  padding-left: 42px;
+}
+
+
+.form textarea {
+  padding: 12px;
+
+  resize: vertical;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   TABLA
+========================================================= */
+
+.tableWrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+.table {
+  width: 100%;
+
+  min-width: 1450px;
+
+  border-collapse: collapse;
+}
+
+
+.table th,
+.table td {
+  padding:
+    13px
+    10px;
+
+  border-bottom:
+    1px solid
+    rgba(
+      77,
+      135,
+      162,
+      0.18
+    );
+
+  text-align: left;
+}
+
+
+.table th {
+  color: #718f9f;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+}
+
+
+.table td {
+  color: #bed2dc;
+
+  font-size: 13px;
+}
+
+
+.table td strong,
+.table td small {
+  display: block;
+}
+
+
+.table td strong {
+  color: #ffffff;
+
+  font-size: 13px;
+}
+
+
+.table td small {
+  margin-top: 4px;
+
+  color: #718f9f;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   BOTONES DE TABLA
+========================================================= */
+
+.actions button {
+  width: 36px;
+  height: 36px;
+
+  border:
+    1px solid
+    rgba(
+      82,
+      147,
+      176,
+      0.3
+    );
+
+  border-radius: 9px;
+
+  background:
+    rgba(
+      5,
+      25,
+      39,
+      0.88
+    );
+
+  color: #82aabd;
+
+  display: grid;
+
+  place-items: center;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.emptyState {
+  min-height: 250px;
+
+  color: #7897a8;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+}
+
+
+.emptyState h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 18px;
+}
+
+
+.emptyState p {
+  max-width: 520px;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   MODAL / DRAWER
+========================================================= */
+
+.modalBackdrop,
+.drawerBackdrop {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  background:
+    rgba(
+      0,
+      8,
+      16,
+      0.77
+    );
+
+  backdrop-filter:
+    blur(
+      5px
+    );
+}
+
+
+.modalBackdrop {
+  padding: 20px;
+
+  display: grid;
+
+  place-items: center;
+}
+
+
+.modal {
+  width:
+    min(
+      900px,
+      100%
+    );
+
+  max-height: 94vh;
+
+  overflow-y: auto;
+
+  border:
+    1px solid
+    rgba(
+      82,
+      154,
+      184,
+      0.31
+    );
+
+  border-radius: 17px;
+
+  background: #091d2c;
+}
+
+
+.modalHeader,
+.modalFooter {
+  padding:
+    18px
+    21px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+
+.modalHeader {
+  border-bottom:
+    1px solid
+    rgba(
+      80,
+      139,
+      167,
+      0.21
+    );
+}
+
+
+.modalFooter {
+  border-top:
+    1px solid
+    rgba(
+      80,
+      139,
+      167,
+      0.21
+    );
+
+  justify-content: flex-end;
+}
+
+
+.modalHeader h2 {
+  margin: 0;
+
+  color: #ffffff;
+}
+
+
+.modalHeader button {
+  border: 0;
+
+  background: transparent;
+
+  color: #a6beca;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form {
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+
+.form label {
+  color: #bed3dd;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+.formGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 12px;
+}
+
+
+.contextInfo {
+  padding: 14px;
+
+  border:
+    1px solid
+    rgba(
+      79,
+      145,
+      174,
+      0.24
+    );
+
+  border-radius: 12px;
+
+  background:
+    rgba(
+      6,
+      27,
+      41,
+      0.68
+    );
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  color: #9db7c3;
+
+  font-size: 13px;
+}
+
+
+.contextInfo strong {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   DRAWER
+========================================================= */
+
+.drawerBackdrop {
+  display: flex;
+
+  justify-content: flex-end;
+}
+
+
+.drawer {
+  width:
+    min(
+      760px,
+      100%
+    );
+
+  height: 100%;
+
+  border-left:
+    1px solid
+    rgba(
+      82,
+      154,
+      184,
+      0.31
+    );
+
+  background: #091d2c;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   REPORTE EN PANTALLA
+========================================================= */
+
+.reportLabel {
+  color: #55d9ed;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+}
+
+
+.reportDocument {
+  flex: 1;
+
+  padding: 28px;
+
+  overflow-y: auto;
+
+  background: #f4f7f9;
+
+  color: #17242d;
+}
+
+
+/* =========================================================
+   CABECERA DEL REPORTE
+========================================================= */
+
+.printHeader {
+  padding-bottom: 18px;
+
+  margin-bottom: 22px;
+
+  border-bottom:
+    2px solid
+    #182d39;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+
+.printHeader div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.printHeader strong {
+  color: #142a35;
+
+  font-size: 19px;
+}
+
+
+.printHeader span {
+  color: #647983;
+
+  font-size: 11px;
+}
+
+
+.printLogo {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background: #31c6d7;
+
+  color: #062634;
+
+  font-size: 14px;
+  font-weight: 900;
+
+  display: grid;
+
+  place-items: center;
+}
+
+
+/* =========================================================
+   INFORMACIÓN DEL REPORTE
+========================================================= */
+
+.reportInfo {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 12px;
+}
+
+
+.reportInfo div {
+  padding: 12px;
+
+  border:
+    1px solid
+    #d7e0e4;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+}
+
+
+.reportInfo dt {
+  color: #69808b;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+}
+
+
+.reportInfo dd {
+  margin:
+    5px 0
+    0;
+
+  color: #17242d;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   SECCIONES DEL REPORTE
+========================================================= */
+
+.reportSection {
+  margin-top: 25px;
+}
+
+
+.reportSection h3 {
+  margin:
+    0 0
+    9px;
+
+  color: #17242d;
+
+  font-size: 16px;
+}
+
+
+.reportSection p {
+  margin: 0;
+
+  color: #455a64;
+
+  font-size: 12px;
+
+  line-height: 1.65;
+
+  white-space: pre-wrap;
+}
+
+
+/* =========================================================
+   MÉTRICAS DEL REPORTE
+========================================================= */
+
+.reportMetricsGrid {
+  margin-top: 22px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 10px;
+}
+
+
+.reportMetricsGrid article {
+  padding: 13px;
+
+  border:
+    1px solid
+    #d6e0e4;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.reportMetricsGrid span {
+  color: #6e828b;
+
+  font-size: 10px;
+}
+
+
+.reportMetricsGrid strong {
+  color: #162a34;
+
+  font-size: 21px;
+}
+
+
+/* =========================================================
+   RESULTADOS
+========================================================= */
+
+.resultsList {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+.resultsList article {
+  padding: 14px;
+
+  border:
+    1px solid
+    #d7e0e4;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+}
+
+
+.resultsList article > div {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+
+.resultsList article > div:first-child {
+  margin-bottom: 10px;
+}
+
+
+.resultsList article span {
+  display: block;
+
+  color: #667c86;
+
+  font-size: 11px;
+}
+
+
+.resultsList article strong {
+  color: #17242d;
+
+  font-size: 13px;
+}
+
+
+.resultsList article p {
+  margin:
+    12px 0
+    0;
+
+  color: #4f626b;
+
+  font-size: 12px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   FOOTER DEL REPORTE
+========================================================= */
+
+.printFooter {
+  padding-top: 18px;
+
+  margin-top: 30px;
+
+  border-top:
+    1px solid
+    #cbd7dc;
+
+  color: #71848c;
+
+  font-size: 10px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   CONFIRMACIÓN
+========================================================= */
+
+.confirmModal {
+  width:
+    min(
+      460px,
+      100%
+    );
+
+  padding: 25px;
+
+  border:
+    1px solid
+    rgba(
+      82,
+      154,
+      184,
+      0.31
+    );
+
+  border-radius: 17px;
+
+  background: #091d2c;
+
+  color: #bed2dc;
+
+  text-align: center;
+}
+
+
+.confirmModal h2 {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (
+  max-width: 1500px
+) {
+
+  .summaryGrid {
+    grid-template-columns:
+      repeat(
+        4,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+
+  .filters {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+
+  .searchField {
+    grid-column:
+      1 / -1;
+  }
+}
+
+
+@media (
+  max-width: 1000px
+) {
+
+  .contextGrid,
+  .reportMetricsGrid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+}
+
+
+@media (
+  max-width: 700px
+) {
+
+  .summaryGrid,
+  .contextGrid,
+  .filters,
+  .formGrid,
+  .reportInfo,
+  .reportMetricsGrid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .searchField {
+    grid-column:
+      auto;
+  }
+
+
+  .headerActions {
+    width: 100%;
+
+    flex-direction: column;
+  }
+
+
+  .headerActions > * {
+    width: 100%;
+  }
+
+
+  .drawer {
+    width: 100%;
+  }
+
+
+  .reportDocument {
+    padding: 18px;
+  }
+
+
+  .printFooter {
+    flex-direction: column;
+  }
+}
+
+
+/* =========================================================
+   IMPRESIÓN / GUARDAR COMO PDF
+
+   IMPORTANTE:
+   ESTE ES EL ÚNICO @media print DEL ARCHIVO.
+========================================================= */
+
+@media print {
+
+  @page {
+    size: A4 portrait;
+
+    margin:
+      12mm
+      14mm;
+  }
+
+
+  /*
+   * No usamos visibility:hidden.
+   *
+   * visibility mantiene el espacio ocupado
+   * por los elementos ocultos y era una de
+   * las causas de las páginas vacías.
+   */
+
+
+  /* =======================================================
+     PÁGINA PRINCIPAL
+  ======================================================= */
+
+  .page {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: block !important;
+
+    background: #ffffff !important;
+
+    overflow: visible !important;
+  }
+
+
+  /*
+   * Cuando el reporte está abierto,
+   * el drawerBackdrop es el único hijo
+   * de .page que necesitamos imprimir.
+   */
+
+  .page > *:not(.drawerBackdrop) {
+    display: none !important;
+  }
+
+
+  /* =======================================================
+     BACKDROP
+  ======================================================= */
+
+  .drawerBackdrop {
+    position: static !important;
+
+    inset: auto !important;
+
+    z-index: auto !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #ffffff !important;
+
+    backdrop-filter: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =======================================================
+     DRAWER
+  ======================================================= */
+
+  .drawer {
+    position: static !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    background: #ffffff !important;
+
+    box-shadow: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  /*
+   * Ocultamos encabezados/botones
+   * del drawer dejando solamente
+   * el documento.
+   */
+
+  .drawer > *:not(.reportDocument) {
+    display: none !important;
+  }
+
+
+  /* =======================================================
+     DOCUMENTO
+  ======================================================= */
+
+  .reportDocument {
+    position: static !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+
+    /*
+     * @page ya proporciona los márgenes.
+     * No agregamos otros 20mm aquí.
+     */
+    padding: 0 !important;
+
+    background: #ffffff !important;
+
+    color: #17242d !important;
+
+    border: 0 !important;
+
+    box-shadow: none !important;
+
+    overflow: visible !important;
+
+    transform: none !important;
+  }
+
+
+  /* =======================================================
+     CABECERA
+  ======================================================= */
+
+  .printHeader {
+    margin:
+      0 0
+      16px !important;
+
+    padding:
+      0 0
+      12px !important;
+
+    break-inside:
+      avoid !important;
+
+    page-break-inside:
+      avoid !important;
+  }
+
+
+  .printLogo {
+    width: 40px !important;
+    height: 40px !important;
+
+    border-radius: 8px !important;
+  }
+
+
+  .printHeader strong {
+    color: #142a35 !important;
+
+    font-size: 15px !important;
+  }
+
+
+  .printHeader span {
+    color: #647983 !important;
+
+    font-size: 9px !important;
+  }
+
+
+  /* =======================================================
+     INFORMACIÓN
+  ======================================================= */
+
+  .reportInfo {
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      ) !important;
+
+    gap: 7px !important;
+
+    break-inside:
+      avoid !important;
+
+    page-break-inside:
+      avoid !important;
+  }
+
+
+  .reportInfo div {
+    padding: 8px !important;
+
+    border:
+      1px solid
+      #d7e0e4 !important;
+
+    border-radius: 6px !important;
+
+    background:
+      #ffffff !important;
+  }
+
+
+  .reportInfo dt {
+    color: #69808b !important;
+
+    font-size: 8px !important;
+  }
+
+
+  .reportInfo dd {
+    margin-top: 3px !important;
+
+    color: #17242d !important;
+
+    font-size: 10px !important;
+  }
+
+
+  /* =======================================================
+     SECCIONES
+  ======================================================= */
+
+  .reportSection {
+    margin-top:
+      15px !important;
+
+    background:
+      transparent !important;
+
+    border: 0 !important;
+  }
+
+
+  .reportSection h3 {
+    margin:
+      0 0
+      6px !important;
+
+    color: #17242d !important;
+
+    font-size: 12px !important;
+  }
+
+
+  .reportSection p {
+    color: #455a64 !important;
+
+    font-size: 9px !important;
+
+    line-height:
+      1.45 !important;
+  }
+
+
+  /* =======================================================
+     MÉTRICAS
+  ======================================================= */
+
+  .reportMetricsGrid {
+    margin-top:
+      13px !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(
+        4,
+        minmax(
+          0,
+          1fr
+        )
+      ) !important;
+
+    gap: 6px !important;
+
+    break-inside:
+      avoid !important;
+
+    page-break-inside:
+      avoid !important;
+  }
+
+
+  .reportMetricsGrid article {
+    padding: 8px !important;
+
+    border:
+      1px solid
+      #d6e0e4 !important;
+
+    border-radius: 6px !important;
+
+    background:
+      #ffffff !important;
+
+    break-inside:
+      avoid !important;
+
+    page-break-inside:
+      avoid !important;
+  }
+
+
+  .reportMetricsGrid span {
+    color: #6e828b !important;
+
+    font-size: 8px !important;
+  }
+
+
+  .reportMetricsGrid strong {
+    color: #162a34 !important;
+
+    font-size: 15px !important;
+  }
+
+
+  /* =======================================================
+     RESULTADOS
+  ======================================================= */
+
+  .resultsList {
+    display: block !important;
+  }
+
+
+  .resultsList article {
+    margin-bottom:
+      7px !important;
+
+    padding:
+      8px !important;
+
+    border:
+      1px solid
+      #d7e0e4 !important;
+
+    border-radius:
+      6px !important;
+
+    background:
+      #ffffff !important;
+
+    break-inside:
+      avoid !important;
+
+    page-break-inside:
+      avoid !important;
+  }
+
+
+  .resultsList article > div {
+    display: flex !important;
+
+    justify-content:
+      space-between !important;
+
+    gap: 8px !important;
+  }
+
+
+  .resultsList article > div:first-child {
+    margin-bottom:
+      5px !important;
+  }
+
+
+  .resultsList article span {
+    color: #667c86 !important;
+
+    font-size: 8px !important;
+  }
+
+
+  .resultsList article strong {
+    color: #17242d !important;
+
+    font-size: 10px !important;
+  }
+
+
+  .resultsList article p {
+    margin-top:
+      6px !important;
+
+    color: #4f626b !important;
+
+    font-size: 8.5px !important;
+
+    line-height:
+      1.4 !important;
+  }
+
+
+  /* =======================================================
+     FOOTER
+  ======================================================= */
+
+  .printFooter {
+    margin-top:
+      16px !important;
+
+    padding-top:
+      9px !important;
+
+    border-top:
+      1px solid
+      #cbd7dc !important;
+
+    color: #71848c !important;
+
+    font-size: 8px !important;
+
+    break-inside:
+      avoid !important;
+
+    page-break-inside:
+      avoid !important;
+  }
+
+
+  /* =======================================================
+     TEXTO Y COLORES
+  ======================================================= */
+
+  .reportDocument,
+  .reportDocument * {
+    -webkit-print-color-adjust:
+      exact !important;
+
+    print-color-adjust:
+      exact !important;
+  }
+
+
+  /* =======================================================
+     EVITAR SALTOS INNECESARIOS
+  ======================================================= */
+
+  .reportDocument > *:first-child {
+    margin-top: 0 !important;
+
+    break-before:
+      auto !important;
+
+    page-break-before:
+      auto !important;
+  }
+
+
+  .reportInfo,
+  .reportMetricsGrid,
+  .printHeader,
+  .printFooter {
+    break-before:
+      auto !important;
+
+    page-break-before:
+      auto !important;
+  }
+}

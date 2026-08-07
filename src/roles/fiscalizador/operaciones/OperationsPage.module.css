@@ -1,0 +1,1236 @@
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+
+.page {
+  display: grid;
+  gap: 22px;
+}
+
+/* =========================================================
+   ACCIONES DEL ENCABEZADO
+   ========================================================= */
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.secondaryButton,
+.clearButton {
+  min-height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 0 15px;
+
+  color: #c7d8e4;
+
+  border: 1px solid rgba(148, 183, 205, 0.2);
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.secondaryButton:hover:not(:disabled),
+.clearButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  color: #eff9ff;
+
+  border-color: rgba(86, 217, 255, 0.38);
+
+  background: rgba(86, 217, 255, 0.07);
+}
+
+.secondaryButton:disabled,
+.clearButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* =========================================================
+   BARRA REALTIME
+   ========================================================= */
+
+.realtimeBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  padding: 10px 14px;
+
+  color: #8ea7b8;
+
+  border: 1px solid rgba(139, 181, 206, 0.13);
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(16, 39, 57, 0.48),
+      rgba(7, 23, 37, 0.34)
+    );
+
+  font-size: 11px;
+}
+
+.realtimeStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #b8d1df;
+  font-weight: 600;
+}
+
+.realtimeDot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #65dfb7;
+
+  box-shadow:
+    0 0 0 4px rgba(101, 223, 183, 0.09),
+    0 0 13px rgba(101, 223, 183, 0.6);
+}
+
+/* =========================================================
+   MENSAJES DE ERROR
+   ========================================================= */
+
+.errorBanner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 14px;
+
+  color: #ffc1c5;
+
+  border: 1px solid rgba(255, 117, 128, 0.24);
+  border-radius: 12px;
+
+  background: rgba(84, 23, 33, 0.4);
+
+  font-size: 13px;
+}
+
+.errorBanner span {
+  flex: 1;
+}
+
+.errorBanner button {
+  display: grid;
+  place-items: center;
+
+  padding: 5px;
+
+  color: inherit;
+
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   TARJETAS DE RESUMEN
+   ========================================================= */
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.summaryCard {
+  min-height: 118px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+
+  padding: 17px;
+
+  border: 1px solid rgba(143, 184, 207, 0.15);
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 43, 62, 0.62),
+      rgba(8, 25, 40, 0.48)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+.summaryIcon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  color: #061724;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #55d9ff,
+      #69e3b5
+    );
+}
+
+.summaryCard > div:last-child {
+  min-width: 0;
+
+  display: grid;
+  gap: 5px;
+}
+
+.summaryCard span {
+  color: #a9c0cf;
+
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.summaryCard strong {
+  color: #f3f9fd;
+
+  font-size: 27px;
+  line-height: 1;
+}
+
+.summaryCard small {
+  color: #718c9d;
+
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   FILTROS
+   ========================================================= */
+
+.filters {
+  display: grid;
+  grid-template-columns:
+    minmax(240px, 1fr)
+    minmax(160px, 0.7fr)
+    minmax(150px, 0.6fr)
+    minmax(145px, 0.55fr)
+    minmax(135px, 0.5fr)
+    auto;
+  gap: 10px;
+
+  padding-bottom: 18px;
+
+  border-bottom:
+    1px solid rgba(143, 184, 207, 0.12);
+}
+
+.searchField {
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0 13px;
+
+  color: #7290a2;
+
+  border: 1px solid rgba(150, 190, 213, 0.17);
+  border-radius: 11px;
+
+  background: rgba(3, 16, 27, 0.48);
+}
+
+.searchField:focus-within {
+  border-color: rgba(86, 217, 255, 0.5);
+
+  box-shadow:
+    0 0 0 3px rgba(86, 217, 255, 0.07);
+}
+
+.searchField input {
+  width: 100%;
+
+  color: #edf8ff;
+
+  border: 0;
+  outline: none;
+  background: transparent;
+
+  font: inherit;
+  font-size: 12px;
+}
+
+.searchField input::placeholder {
+  color: #678396;
+}
+
+.filters select {
+  min-height: 42px;
+
+  padding: 0 12px;
+
+  color: #d1e1eb;
+
+  border: 1px solid rgba(150, 190, 213, 0.17);
+  border-radius: 11px;
+
+  background: #091c2b;
+
+  font: inherit;
+  font-size: 12px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+.filters select:focus {
+  border-color: rgba(86, 217, 255, 0.5);
+
+  box-shadow:
+    0 0 0 3px rgba(86, 217, 255, 0.07);
+}
+
+.clearButton {
+  min-width: 112px;
+}
+
+/* =========================================================
+   ENCABEZADO DE TABLA
+   ========================================================= */
+
+.tableHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  padding: 18px 0 13px;
+}
+
+.tableHeader h3 {
+  margin: 0 0 4px;
+
+  color: #f1f8fc;
+
+  font-size: 15px;
+}
+
+.tableHeader span {
+  color: #7894a6;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   TABLA
+   ========================================================= */
+
+.tableWrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 1320px;
+
+  border-collapse: collapse;
+}
+
+.table th {
+  padding: 11px 12px;
+
+  color: #7691a3;
+
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.55px;
+
+  border-bottom:
+    1px solid rgba(143, 184, 207, 0.12);
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.table td {
+  padding: 14px 12px;
+
+  color: #b9ceda;
+
+  border-bottom:
+    1px solid rgba(143, 184, 207, 0.08);
+
+  font-size: 11px;
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background: rgba(86, 217, 255, 0.035);
+}
+
+/* =========================================================
+   CELDA DE OPERACIÓN
+   ========================================================= */
+
+.operationCell {
+  min-width: 220px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.operationAvatar {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  color: #66dbff;
+
+  border: 1px solid rgba(86, 217, 255, 0.19);
+  border-radius: 10px;
+
+  background: rgba(86, 217, 255, 0.07);
+}
+
+.operationCell > div:last-child {
+  min-width: 0;
+
+  display: grid;
+  gap: 4px;
+}
+
+.operationCell strong {
+  max-width: 215px;
+
+  overflow: hidden;
+
+  color: #ecf7fc;
+
+  font-size: 11px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.operationCell span {
+  color: #718c9d;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   CELDA DE EMPRESA
+   ========================================================= */
+
+.companyCell {
+  min-width: 180px;
+
+  display: grid;
+  gap: 4px;
+}
+
+.companyCell strong {
+  color: #dcebf3;
+
+  font-size: 11px;
+}
+
+.companyCell span {
+  color: #718c9d;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   TIPO Y ETAPA
+   ========================================================= */
+
+.typeCell,
+.stageCell {
+  display: grid;
+  gap: 4px;
+}
+
+.typeCell strong,
+.stageCell strong {
+  color: #d6e7ef;
+
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.typeCell span,
+.stageCell span {
+  color: #718c9d;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   UBICACIÓN
+   ========================================================= */
+
+.locationCell {
+  min-width: 140px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #9bb4c3;
+}
+
+.locationCell svg {
+  flex-shrink: 0;
+
+  color: #66d9ff;
+}
+
+/* =========================================================
+   OBLIGACIONES
+   ========================================================= */
+
+.obligationsCell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  min-width: 52px;
+
+  padding: 5px 8px;
+
+  color: #b9d5e3;
+
+  border: 1px solid rgba(114, 178, 211, 0.14);
+  border-radius: 999px;
+
+  background: rgba(86, 217, 255, 0.05);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   CUMPLIMIENTO
+   ========================================================= */
+
+.complianceCell {
+  min-width: 100px;
+
+  display: grid;
+  gap: 6px;
+}
+
+.complianceCell strong {
+  color: #e8f6fc;
+
+  font-size: 11px;
+}
+
+.progressTrack {
+  width: 90px;
+  height: 5px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.progressTrack span {
+  display: block;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #50d7ff,
+      #68e2b7
+    );
+}
+
+/* =========================================================
+   ESTADO DE ACTIVIDAD
+   ========================================================= */
+
+.activeStatus,
+.inactiveStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.activeStatus {
+  color: #7ee7c0;
+
+  background: rgba(91, 215, 169, 0.09);
+}
+
+.inactiveStatus {
+  color: #ffb3ba;
+
+  background: rgba(255, 111, 126, 0.09);
+}
+
+.activeStatus::before,
+.inactiveStatus::before {
+  content: "";
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+}
+
+/* =========================================================
+   ACCIONES DE FILA
+   ========================================================= */
+
+.rowActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.rowActions button {
+  width: 31px;
+  height: 31px;
+
+  display: grid;
+  place-items: center;
+
+  color: #8ea9b9;
+
+  border: 1px solid rgba(145, 187, 209, 0.13);
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.rowActions button:hover {
+  transform: translateY(-1px);
+
+  color: #5ddcff;
+
+  border-color: rgba(86, 217, 255, 0.35);
+
+  background: rgba(86, 217, 255, 0.07);
+}
+
+/* =========================================================
+   ESTADOS DE CARGA Y VACÍO
+   ========================================================= */
+
+.loadingState,
+.emptyState {
+  min-height: 270px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  color: #7894a5;
+
+  text-align: center;
+}
+
+.emptyState svg {
+  color: #4ccff2;
+}
+
+.emptyState h3 {
+  margin: 0;
+
+  color: #eaf5fa;
+
+  font-size: 16px;
+}
+
+.emptyState p {
+  max-width: 380px;
+
+  margin: 0 0 5px;
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   MODAL Y DRAWER
+   ========================================================= */
+
+.modalBackdrop,
+.drawerBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+
+  background: rgba(1, 8, 15, 0.72);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.modalBackdrop {
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+}
+
+.modal {
+  width: min(780px, 100%);
+  max-height: calc(100vh - 48px);
+
+  overflow-y: auto;
+
+  border: 1px solid rgba(161, 206, 229, 0.22);
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #102c40,
+      #071a29
+    );
+
+  box-shadow:
+    0 35px 100px rgba(0, 0, 0, 0.52);
+}
+
+.modalHeader,
+.drawerHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 22px 24px;
+
+  border-bottom:
+    1px solid rgba(145, 188, 211, 0.13);
+}
+
+.modalHeader span,
+.drawerHeader span {
+  color: #58d9ff;
+
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.modalHeader h2,
+.drawerHeader h2 {
+  margin: 6px 0 5px;
+
+  color: #f1f8fc;
+
+  font-size: 20px;
+}
+
+.modalHeader p {
+  margin: 0;
+
+  color: #8ba5b5;
+
+  font-size: 11px;
+}
+
+.modalHeader > button,
+.drawerHeader > button {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  color: #91abba;
+
+  border: 1px solid rgba(145, 188, 211, 0.14);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
+
+.operationForm {
+  padding: 23px 24px;
+}
+
+.formSection {
+  display: grid;
+  gap: 14px;
+
+  margin-bottom: 22px;
+}
+
+.formSection:last-of-type {
+  margin-bottom: 0;
+}
+
+.formSectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding-bottom: 9px;
+
+  color: #dcebf3;
+
+  border-bottom:
+    1px solid rgba(143, 184, 207, 0.1);
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.formSectionTitle svg {
+  color: #58d9ff;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.formGrid label {
+  display: grid;
+  gap: 7px;
+
+  color: #bccfda;
+
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.fullField {
+  grid-column: 1 / -1;
+}
+
+.formGrid input,
+.formGrid select,
+.formGrid textarea {
+  width: 100%;
+
+  padding: 11px 12px;
+
+  color: #eff9ff;
+
+  border: 1px solid rgba(151, 192, 214, 0.17);
+  border-radius: 10px;
+
+  background: rgba(3, 16, 27, 0.58);
+
+  font: inherit;
+  font-size: 11px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.formGrid select {
+  cursor: pointer;
+}
+
+.formGrid textarea {
+  min-height: 88px;
+
+  resize: vertical;
+}
+
+.formGrid input:focus,
+.formGrid select:focus,
+.formGrid textarea:focus {
+  border-color: rgba(86, 217, 255, 0.55);
+
+  background: rgba(3, 18, 30, 0.72);
+
+  box-shadow:
+    0 0 0 3px rgba(86, 217, 255, 0.07);
+}
+
+.formGrid input::placeholder,
+.formGrid textarea::placeholder {
+  color: #688496;
+}
+
+.formError {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 16px;
+  padding: 11px 12px;
+
+  color: #ffb9bf;
+
+  border: 1px solid rgba(255, 111, 126, 0.22);
+  border-radius: 10px;
+
+  background: rgba(92, 23, 35, 0.35);
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   PIE DEL MODAL
+   ========================================================= */
+
+.modalFooter,
+.drawerFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  padding-top: 20px;
+}
+
+/* =========================================================
+   DRAWER DE DETALLE
+   ========================================================= */
+
+.drawerBackdrop {
+  justify-content: flex-end;
+}
+
+.drawer {
+  width: min(460px, 100%);
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  border-left:
+    1px solid rgba(161, 206, 229, 0.2);
+
+  background:
+    linear-gradient(
+      145deg,
+      #102c40,
+      #071a29
+    );
+
+  box-shadow:
+    -28px 0 80px rgba(0, 0, 0, 0.4);
+}
+
+.drawerBody {
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 22px;
+}
+
+.detailSummary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 16px;
+
+  border: 1px solid rgba(144, 188, 211, 0.14);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.detailIcon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  color: #061724;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #55d9ff,
+      #69e3b5
+    );
+}
+
+.detailSummary > div:last-child {
+  display: grid;
+  gap: 7px;
+}
+
+.detailSummary span {
+  color: #89a5b5;
+
+  font-size: 10px;
+}
+
+.detailList {
+  display: grid;
+  gap: 0;
+
+  margin: 20px 0 0;
+}
+
+.detailList > div {
+  display: grid;
+  gap: 5px;
+
+  padding: 13px 0;
+
+  border-bottom:
+    1px solid rgba(143, 184, 207, 0.1);
+}
+
+.detailList dt {
+  color: #718d9f;
+
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.detailList dd {
+  margin: 0;
+
+  color: #d9e8f0;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.coordinates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.coordinateBadge {
+  padding: 5px 8px;
+
+  color: #9fdff1;
+
+  border: 1px solid rgba(86, 217, 255, 0.16);
+  border-radius: 8px;
+
+  background: rgba(86, 217, 255, 0.05);
+
+  font-family: monospace;
+  font-size: 10px;
+}
+
+.drawerFooter {
+  padding: 18px 22px;
+
+  border-top:
+    1px solid rgba(143, 184, 207, 0.12);
+}
+
+/* =========================================================
+   ANIMACIÓN
+   ========================================================= */
+
+.spinning {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1350px) {
+  .filters {
+    grid-template-columns:
+      minmax(220px, 1fr)
+      repeat(3, minmax(135px, 0.55fr));
+  }
+
+  .filters select:nth-of-type(4) {
+    grid-column: auto;
+  }
+
+  .clearButton {
+    grid-column: 1 / -1;
+
+    width: fit-content;
+  }
+}
+
+@media (max-width: 1180px) {
+  .summaryGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .filters {
+    grid-template-columns:
+      minmax(230px, 1fr)
+      repeat(2, minmax(150px, 0.6fr));
+  }
+
+  .clearButton {
+    grid-column: 1 / -1;
+
+    width: fit-content;
+  }
+}
+
+@media (max-width: 760px) {
+  .headerActions {
+    width: 100%;
+
+    flex-wrap: wrap;
+  }
+
+  .headerActions > * {
+    flex: 1;
+  }
+
+  .realtimeBar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .summaryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .clearButton {
+    width: 100%;
+  }
+
+  .modalBackdrop {
+    align-items: flex-end;
+
+    padding: 0;
+  }
+
+  .modal {
+    max-height: 92vh;
+
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+
+    border-radius: 20px 20px 0 0;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .fullField {
+    grid-column: auto;
+  }
+
+  .modalFooter {
+    flex-direction: column-reverse;
+  }
+
+  .modalFooter > * {
+    width: 100%;
+  }
+
+  .drawer {
+    width: 100%;
+  }
+}

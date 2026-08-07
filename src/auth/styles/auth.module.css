@@ -1,0 +1,2680 @@
+/* =========================================================
+   CONTENEDOR GENERAL DEL LOGIN
+   ========================================================= */
+
+.page {
+  position: relative;
+
+  min-height: 100vh;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(430px, 0.92fr);
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 12, 22, 0.72) 0%,
+      rgba(3, 13, 23, 0.48) 42%,
+      rgba(5, 12, 25, 0.44) 70%,
+      rgba(4, 10, 22, 0.56) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(2, 9, 17, 0.68) 0%,
+      rgba(4, 15, 26, 0.12) 48%,
+      rgba(4, 14, 25, 0.24) 100%
+    ),
+    url("/login-bg-minera.png") center center / cover no-repeat;
+
+  isolation: isolate;
+}
+
+/* Capa general para conservar legibilidad sin ocultar la imagen */
+
+.page::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 16% 22%,
+      rgba(86, 217, 255, 0.09),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 75% 78%,
+      rgba(105, 227, 181, 0.07),
+      transparent 28%
+    );
+}
+
+/* Sombra inferior para integrar las métricas */
+
+.page::after {
+  content: "";
+
+  position: absolute;
+  inset: auto 0 0;
+  z-index: -1;
+
+  height: 40%;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(2, 9, 17, 0.7),
+      transparent
+    );
+}
+
+/* =========================================================
+   SECCIÓN IZQUIERDA
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+  padding: 40px 44px 30px 82px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  border-right: 1px solid rgba(165, 210, 235, 0.13);
+
+  isolation: isolate;
+}
+
+/*
+  Estas capas siguen en el JSX, pero ya no deben colocar
+  una segunda imagen. La imagen principal está en .page.
+*/
+
+.heroBackground {
+  display: none;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      105deg,
+      rgba(2, 12, 22, 0.35) 0%,
+      rgba(3, 14, 24, 0.16) 52%,
+      transparent 100%
+    );
+}
+
+.heroGrid {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(105, 206, 235, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(105, 206, 235, 0.018) 1px,
+      transparent 1px
+    );
+
+  background-size: 58px 58px;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      transparent 82%
+    );
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      transparent 82%
+    );
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -190px;
+  top: 14%;
+
+  z-index: -1;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(86, 217, 255, 0.12),
+      transparent 68%
+    );
+
+  filter: blur(16px);
+}
+
+/* =========================================================
+   MARCA
+   ========================================================= */
+
+.brand {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  width: fit-content;
+  max-width: 760px;
+}
+
+.brandIcon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  color: #041521;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #55d9ff,
+      #69e3b5
+    );
+
+  box-shadow:
+    0 14px 34px rgba(72, 214, 245, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brandText strong {
+  color: #f2f9ff;
+
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1;
+
+  letter-spacing: -0.25px;
+
+  text-shadow:
+    0 2px 16px rgba(0, 0, 0, 0.35);
+}
+
+.brandText span {
+  color: #9ed9ec;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================================
+   CONTENIDO PRINCIPAL IZQUIERDO
+   ========================================================= */
+
+.heroCopy {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 760px;
+
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.heroBadge {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 22px;
+  padding: 8px 12px;
+
+  color: #c8f3ff;
+
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.25px;
+
+  border: 1px solid rgba(86, 217, 255, 0.26);
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 38, 55, 0.62),
+      rgba(7, 27, 41, 0.42)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 10px 28px rgba(0, 0, 0, 0.16);
+
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+}
+
+.heroBadge svg {
+  color: #62e0ff;
+}
+
+.heroCopy h1 {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: #f1f8ff;
+
+  font-size: clamp(46px, 5.2vw, 74px);
+  font-weight: 770;
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+
+  text-shadow:
+    0 6px 28px rgba(0, 0, 0, 0.42);
+}
+
+.heroCopy h1 span {
+  display: block;
+
+  margin-top: 9px;
+
+  color: transparent;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4ed7ff 0%,
+      #66e5c0 78%,
+      #7ce8c5 100%
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  filter:
+    drop-shadow(0 8px 24px rgba(62, 207, 233, 0.14));
+}
+
+.heroCopy > p {
+  max-width: 620px;
+
+  margin: 24px 0 0;
+
+  color: #c0d8e6;
+
+  font-size: 15px;
+  line-height: 1.75;
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.65);
+}
+
+/* =========================================================
+   CARACTERÍSTICAS
+   ========================================================= */
+
+.heroFeatures {
+  display: flex;
+  gap: 28px;
+
+  margin-top: 28px;
+}
+
+.feature {
+  max-width: 275px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.featureDot {
+  width: 9px;
+  height: 9px;
+
+  flex-shrink: 0;
+
+  margin-top: 6px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #52dcff,
+      #69e3b5
+    );
+
+  box-shadow:
+    0 0 0 5px rgba(87, 218, 248, 0.1),
+    0 0 18px rgba(87, 218, 248, 0.48);
+}
+
+.feature strong {
+  display: block;
+
+  color: #f0f8fd;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.58);
+}
+
+.feature span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #acc8d7;
+
+  font-size: 11px;
+  line-height: 1.45;
+
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.62);
+}
+
+/* =========================================================
+   MÉTRICAS INFERIORES
+   ========================================================= */
+
+.heroMetrics {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 0;
+
+  width: fit-content;
+  max-width: 760px;
+
+  padding: 0;
+  margin-top: 8px;
+
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.heroMetrics::before {
+  display: none;
+}
+
+.heroMetrics article {
+  min-width: 0;
+  padding: 0 28px 0 0;
+}
+
+.heroMetrics article:last-child {
+  padding-right: 0;
+}
+
+.heroMetrics strong {
+  display: block;
+
+  color: #f4fbff;
+
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+
+  letter-spacing: -0.8px;
+
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
+}
+
+.heroMetrics span {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #b8d0db;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.metricDivider {
+  width: 1px;
+  height: 58px;
+
+  margin: 0 28px 0 0;
+  flex-shrink: 0;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(175, 219, 234, 0.34),
+    transparent
+  );
+}
+
+/* =========================================================
+   PIE DE LA SECCIÓN IZQUIERDA
+   ========================================================= */
+
+.heroFooter {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 920px;
+
+  margin-top: 10px;
+
+  color: #8eaaba;
+  font-size: 10px;
+  letter-spacing: 0.2px;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.heroStatus {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.heroStatus i {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #64e0b7;
+
+  box-shadow:
+    0 0 4px rgba(100, 224, 183, 0.85),
+    0 0 15px rgba(100, 224, 183, 0.62);
+}
+
+/* =========================================================
+   SECCIÓN DERECHA
+   ========================================================= */
+
+.formSide {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 34px 42px;
+
+  background: transparent;
+}
+
+/* Halo suave detrás del formulario */
+
+.formSide::before {
+  content: "";
+
+  position: absolute;
+
+  width: min(620px, 90%);
+  height: 620px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 111, 155, 0.15),
+      rgba(8, 23, 39, 0.08) 42%,
+      transparent 70%
+    );
+
+  filter: blur(18px);
+}
+
+/* =========================================================
+   FORMULARIO GLASS
+   ========================================================= */
+
+.formSide form {
+  position: relative;
+  z-index: 1;
+
+  width: min(500px, 100%);
+
+  padding: 30px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(184, 222, 242, 0.23);
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 40, 59, 0.72),
+      rgba(6, 20, 34, 0.6)
+    );
+
+  box-shadow:
+    0 34px 95px rgba(0, 0, 0, 0.42),
+    0 8px 30px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.11),
+    inset 0 0 38px rgba(86, 217, 255, 0.025);
+
+  backdrop-filter: blur(26px) saturate(125%);
+  -webkit-backdrop-filter: blur(26px) saturate(125%);
+}
+
+.formSide form::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.075),
+      transparent 30%,
+      transparent 72%,
+      rgba(86, 217, 255, 0.025)
+    );
+}
+
+.formSide form::after {
+  content: "";
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  right: -130px;
+  top: -130px;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(86, 217, 255, 0.13),
+      transparent 68%
+    );
+
+  filter: blur(10px);
+}
+
+.formSide form > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   TEXTOS DEL FORMULARIO
+   ========================================================= */
+
+.eyebrow {
+  display: block;
+
+  color: #57dcff;
+
+  text-transform: uppercase;
+  letter-spacing: 1.7px;
+
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.formSide h2 {
+  max-width: 410px;
+
+  margin: 10px 0 8px;
+
+  color: #f0f8ff;
+
+  font-size: 28px;
+  line-height: 1.15;
+
+  text-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.28);
+}
+
+.formSide form > p {
+  max-width: 410px;
+
+  margin: 0 0 20px;
+
+  color: #a9c0d0;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   SELECTOR VISUAL DE ROLES
+   ========================================================= */
+
+.roleSelector {
+  display: grid;
+  gap: 10px;
+
+  margin: 0 0 20px;
+}
+
+.roleSelectorLabel {
+  color: #d7e7f1;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.roleCards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.roleCard {
+  width: 100%;
+  min-height: 150px;
+
+  margin: 0;
+  padding: 14px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+
+  color: #dfeaf4;
+  text-align: left;
+
+  border: 1px solid rgba(160, 198, 220, 0.2);
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.02)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.roleCard:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(85, 217, 255, 0.38);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(85, 217, 255, 0.08),
+      rgba(105, 227, 181, 0.03)
+    );
+}
+
+.roleCardActive {
+  border-color: rgba(87, 220, 255, 0.78);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(85, 217, 255, 0.14),
+      rgba(105, 227, 181, 0.07)
+    );
+
+  box-shadow:
+    0 0 0 1px rgba(85, 217, 255, 0.12),
+    0 14px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+}
+
+.roleCardIcon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  color: #051521;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #55d9ff,
+      #69e3b5
+    );
+
+  box-shadow:
+    0 9px 24px rgba(72, 214, 245, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42);
+}
+
+.roleCardContent {
+  width: 100%;
+
+  display: grid;
+  gap: 6px;
+}
+
+.roleCardContent strong {
+  color: #f2f9ff;
+
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.roleCardContent span {
+  color: #9eb4c3;
+
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   CAMPOS DEL FORMULARIO
+   ========================================================= */
+
+.formSide label {
+  display: grid;
+  gap: 7px;
+
+  margin-top: 14px;
+
+  color: #d0e0ea;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.formSide input {
+  width: 100%;
+
+  padding: 12px 13px;
+
+  color: #ffffff;
+
+  border: 1px solid rgba(170, 207, 228, 0.19);
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(2, 13, 24, 0.72),
+      rgba(4, 18, 30, 0.62)
+    );
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.formSide input:focus {
+  border-color: rgba(86, 217, 255, 0.58);
+
+  box-shadow:
+    0 0 0 3px rgba(86, 217, 255, 0.09);
+}
+
+/* =========================================================
+   BOTÓN PRINCIPAL
+   ========================================================= */
+
+.formSide form > button[type="submit"] {
+  width: 100%;
+
+  margin-top: 20px;
+  padding: 13px 16px;
+
+  color: #04131e;
+
+  border: 0;
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #53d8ff,
+      #69e3b5
+    );
+
+  font-weight: 800;
+
+  box-shadow:
+    0 13px 30px rgba(70, 211, 239, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.formSide form > button[type="submit"]:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  filter: brightness(1.04);
+
+  box-shadow:
+    0 18px 38px rgba(67, 213, 236, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42);
+}
+
+.formSide form > button[type="submit"]:active:not(:disabled) {
+  transform: translateY(0);
+
+  box-shadow:
+    0 9px 22px rgba(67, 213, 236, 0.16);
+}
+
+.formSide form > button[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* =========================================================
+   NOTA Y ERRORES
+   ========================================================= */
+
+.formSide small {
+  display: block;
+
+  margin-top: 14px;
+
+  color: #94adbd;
+
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.error {
+  margin-top: 14px;
+  padding: 10px 12px;
+
+  color: #ffadb4;
+
+  border: 1px solid rgba(255, 123, 131, 0.22);
+  border-radius: 10px;
+
+  background: rgba(92, 23, 33, 0.32);
+
+  font-size: 13px;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* =========================================================
+   RESPONSIVE — LAPTOP PEQUEÑA
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .page {
+    grid-template-columns: 1fr 0.82fr;
+  }
+
+  .hero {
+    padding: 34px 34px 30px 58px;
+  }
+
+  .heroCopy h1 {
+    font-size: 55px;
+    letter-spacing: -2px;
+  }
+
+  .heroFeatures {
+    gap: 18px;
+  }
+
+  .metricDivider {
+    margin: 0 16px;
+  }
+
+  .formSide {
+    padding: 26px 34px 26px 18px;
+  }
+
+  .formSide form {
+    padding: 28px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 980px) {
+  .page {
+    display: block;
+
+    min-height: 100vh;
+
+    overflow-y: auto;
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(3, 12, 22, 0.56) 0%,
+        rgba(3, 13, 23, 0.44) 42%,
+        rgba(4, 11, 23, 0.62) 100%
+      ),
+      url("/login-bg-minera.png") center center / cover fixed no-repeat;
+  }
+
+  .hero {
+    min-height: 650px;
+    padding: 30px 28px;
+
+    border-right: 0;
+    border-bottom: 1px solid rgba(148, 198, 224, 0.15);
+  }
+
+  .heroCopy {
+    margin: 70px 0 62px;
+  }
+
+  .heroCopy h1 {
+    max-width: 670px;
+
+    font-size: 51px;
+  }
+
+  .heroCopy > p {
+    max-width: 570px;
+  }
+
+  .formSide {
+    min-height: 620px;
+
+    justify-content: center;
+
+    padding: 56px 24px;
+  }
+
+  .formSide::before {
+    height: 500px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MÓVIL HORIZONTAL / TABLET PEQUEÑA
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 620px;
+
+    padding: 26px 22px;
+  }
+
+  .heroCopy {
+    margin: 58px 0 50px;
+  }
+
+  .heroCopy h1 {
+    font-size: 43px;
+    line-height: 1.01;
+    letter-spacing: -1.8px;
+  }
+
+  .heroFeatures {/* =========================================================
+   CONTENEDOR GENERAL DEL LOGIN
+   ========================================================= */
+
+.page {
+  position: relative;
+
+  min-height: 100vh;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(430px, 0.92fr);
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 12, 22, 0.72) 0%,
+      rgba(3, 13, 23, 0.48) 42%,
+      rgba(5, 12, 25, 0.44) 70%,
+      rgba(4, 10, 22, 0.56) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(2, 9, 17, 0.68) 0%,
+      rgba(4, 15, 26, 0.12) 48%,
+      rgba(4, 14, 25, 0.24) 100%
+    ),
+    url("/login-bg-minera.png") center center / cover no-repeat;
+
+  isolation: isolate;
+}
+
+/* Capa general para conservar legibilidad sin ocultar la imagen */
+
+.page::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 16% 22%,
+      rgba(86, 217, 255, 0.09),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 75% 78%,
+      rgba(105, 227, 181, 0.07),
+      transparent 28%
+    );
+}
+
+/* Sombra inferior para integrar las métricas */
+
+.page::after {
+  content: "";
+
+  position: absolute;
+  inset: auto 0 0;
+  z-index: -1;
+
+  height: 40%;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(2, 9, 17, 0.7),
+      transparent
+    );
+}
+
+/* =========================================================
+   SECCIÓN IZQUIERDA
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+  padding: 40px 44px 30px 82px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  border-right: 1px solid rgba(165, 210, 235, 0.13);
+
+  isolation: isolate;
+}
+
+/*
+  Estas capas siguen en el JSX, pero ya no deben colocar
+  una segunda imagen. La imagen principal está en .page.
+*/
+
+.heroBackground {
+  display: none;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      105deg,
+      rgba(2, 12, 22, 0.35) 0%,
+      rgba(3, 14, 24, 0.16) 52%,
+      transparent 100%
+    );
+}
+
+.heroGrid {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(105, 206, 235, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(105, 206, 235, 0.018) 1px,
+      transparent 1px
+    );
+
+  background-size: 58px 58px;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      transparent 82%
+    );
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      transparent 82%
+    );
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -190px;
+  top: 14%;
+
+  z-index: -1;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(86, 217, 255, 0.12),
+      transparent 68%
+    );
+
+  filter: blur(16px);
+}
+
+/* =========================================================
+   MARCA
+   ========================================================= */
+
+.brand {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  width: fit-content;
+  max-width: 760px;
+}
+
+.brandIcon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  color: #041521;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #55d9ff,
+      #69e3b5
+    );
+
+  box-shadow:
+    0 14px 34px rgba(72, 214, 245, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brandText strong {
+  color: #f2f9ff;
+
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1;
+
+  letter-spacing: -0.25px;
+
+  text-shadow:
+    0 2px 16px rgba(0, 0, 0, 0.35);
+}
+
+.brandText span {
+  color: #9ed9ec;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================================
+   CONTENIDO PRINCIPAL IZQUIERDO
+   ========================================================= */
+
+.heroCopy {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 760px;
+
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.heroBadge {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 22px;
+  padding: 8px 12px;
+
+  color: #c8f3ff;
+
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.25px;
+
+  border: 1px solid rgba(86, 217, 255, 0.26);
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 38, 55, 0.62),
+      rgba(7, 27, 41, 0.42)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 10px 28px rgba(0, 0, 0, 0.16);
+
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+}
+
+.heroBadge svg {
+  color: #62e0ff;
+}
+
+.heroCopy h1 {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: #f1f8ff;
+
+  font-size: clamp(46px, 5.2vw, 74px);
+  font-weight: 770;
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+
+  text-shadow:
+    0 6px 28px rgba(0, 0, 0, 0.42);
+}
+
+.heroCopy h1 span {
+  display: block;
+
+  margin-top: 9px;
+
+  color: transparent;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4ed7ff 0%,
+      #66e5c0 78%,
+      #7ce8c5 100%
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  filter:
+    drop-shadow(0 8px 24px rgba(62, 207, 233, 0.14));
+}
+
+.heroCopy > p {
+  max-width: 620px;
+
+  margin: 24px 0 0;
+
+  color: #c0d8e6;
+
+  font-size: 15px;
+  line-height: 1.75;
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.65);
+}
+
+/* =========================================================
+   CARACTERÍSTICAS
+   ========================================================= */
+
+.heroFeatures {
+  display: flex;
+  gap: 28px;
+
+  margin-top: 28px;
+}
+
+.feature {
+  max-width: 275px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.featureDot {
+  width: 9px;
+  height: 9px;
+
+  flex-shrink: 0;
+
+  margin-top: 6px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #52dcff,
+      #69e3b5
+    );
+
+  box-shadow:
+    0 0 0 5px rgba(87, 218, 248, 0.1),
+    0 0 18px rgba(87, 218, 248, 0.48);
+}
+
+.feature strong {
+  display: block;
+
+  color: #f0f8fd;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.58);
+}
+
+.feature span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #acc8d7;
+
+  font-size: 11px;
+  line-height: 1.45;
+
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.62);
+}
+
+/* =========================================================
+   MÉTRICAS INFERIORES
+   ========================================================= */
+
+.heroMetrics {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 0;
+
+  width: fit-content;
+  max-width: 760px;
+
+  padding: 0;
+  margin-top: 8px;
+
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.heroMetrics::before {
+  display: none;
+}
+
+.heroMetrics article {
+  min-width: 0;
+  padding: 0 28px 0 0;
+}
+
+.heroMetrics article:last-child {
+  padding-right: 0;
+}
+
+.heroMetrics strong {
+  display: block;
+
+  color: #f4fbff;
+
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+
+  letter-spacing: -0.8px;
+
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
+}
+
+.heroMetrics span {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #b8d0db;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.metricDivider {
+  width: 1px;
+  height: 58px;
+
+  margin: 0 28px 0 0;
+  flex-shrink: 0;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(175, 219, 234, 0.34),
+    transparent
+  );
+}
+
+/* =========================================================
+   PIE DE LA SECCIÓN IZQUIERDA
+   ========================================================= */
+
+.heroFooter {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 920px;
+
+  margin-top: 10px;
+
+  color: #8eaaba;
+  font-size: 10px;
+  letter-spacing: 0.2px;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.heroStatus {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.heroStatus i {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #64e0b7;
+
+  box-shadow:
+    0 0 4px rgba(100, 224, 183, 0.85),
+    0 0 15px rgba(100, 224, 183, 0.62);
+}
+
+/* =========================================================
+   SECCIÓN DERECHA
+   ========================================================= */
+
+.formSide {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 34px 54px 34px 24px;
+
+  background: transparent;
+}
+
+/* Halo suave detrás del formulario */
+
+.formSide::before {
+  content: "";
+
+  position: absolute;
+
+  width: min(620px, 90%);
+  height: 620px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 111, 155, 0.15),
+      rgba(8, 23, 39, 0.08) 42%,
+      transparent 70%
+    );
+
+  filter: blur(18px);
+}
+
+/* =========================================================
+   FORMULARIO GLASS
+   ========================================================= */
+
+.formSide form {
+  position: relative;
+  z-index: 1;
+
+  width: min(440px, 100%);
+
+  padding: 32px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(184, 222, 242, 0.23);
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 40, 59, 0.66),
+      rgba(6, 20, 34, 0.54)
+    );
+
+  box-shadow:
+    0 34px 95px rgba(0, 0, 0, 0.42),
+    0 8px 30px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.11),
+    inset 0 0 38px rgba(86, 217, 255, 0.025);
+
+  backdrop-filter: blur(26px) saturate(125%);
+  -webkit-backdrop-filter: blur(26px) saturate(125%);
+}
+
+.formSide form::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.075),
+      transparent 30%,
+      transparent 72%,
+      rgba(86, 217, 255, 0.025)
+    );
+}
+
+.formSide form::after {
+  content: "";
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  right: -130px;
+  top: -130px;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(86, 217, 255, 0.13),
+      transparent 68%
+    );
+
+  filter: blur(10px);
+}
+
+.formSide form > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   TEXTOS DEL FORMULARIO
+   ========================================================= */
+
+.eyebrow {
+  color: #57dcff;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.7px;
+
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.formSide h2 {
+  margin: 10px 0;
+
+  color: #f0f8ff;
+
+  font-size: 28px;
+  line-height: 1.15;
+
+  text-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.28);
+}
+
+.formSide p {
+  margin: 0 0 18px;
+
+  color: #a9c0d0;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.formSide label {
+  display: grid;
+  gap: 7px;
+
+  margin-top: 16px;
+
+  color: #d0e0ea;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   SELECTOR VISUAL DE ROLES
+   ========================================================= */
+
+.roleSelector {
+  display: grid;
+  gap: 12px;
+
+  margin-top: 18px;
+  margin-bottom: 4px;
+}
+
+.roleSelectorLabel {
+  color: #d7e7f1;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.roleCards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.roleCard {
+  width: 100%;
+
+  margin: 0;
+  padding: 13px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+
+  color: #dfeaf4;
+  text-align: left;
+
+  border: 1px solid rgba(160, 198, 220, 0.17);
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.roleCard:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(85, 217, 255, 0.32);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(85, 217, 255, 0.07),
+      rgba(105, 227, 181, 0.025)
+    );
+
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.roleCardActive {
+  border-color: rgba(87, 220, 255, 0.72);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(85, 217, 255, 0.13),
+      rgba(105, 227, 181, 0.065)
+    );
+
+  box-shadow:
+    0 0 0 1px rgba(85, 217, 255, 0.14),
+    0 14px 34px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+}
+
+.roleCardIcon {
+  width: 39px;
+  height: 39px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  color: #051521;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #55d9ff,
+      #69e3b5
+    );
+
+  box-shadow:
+    0 9px 24px rgba(72, 214, 245, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42);
+}
+
+.roleCardContent {
+  display: grid;
+  gap: 5px;
+}
+
+.roleCardContent strong {
+  color: #f2f9ff;
+
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.roleCardContent span {
+  color: #9eb4c3;
+
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   CAMPOS DEL FORMULARIO
+   ========================================================= */
+
+.formSide input,
+.formSide select {
+  width: 100%;
+
+  padding: 12px 13px;
+
+  color: #ffffff;
+
+  border: 1px solid rgba(170, 207, 228, 0.19);
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(2, 13, 24, 0.65),
+      rgba(4, 18, 30, 0.54)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  outline: none;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.formSide input::placeholder {
+  color: #718b9d;
+}
+
+.formSide input:hover,
+.formSide select:hover {
+  border-color: rgba(149, 205, 230, 0.28);
+}
+
+.formSide input:focus,
+.formSide select:focus {
+  border-color: rgba(86, 217, 255, 0.58);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(3, 17, 29, 0.82),
+      rgba(5, 21, 34, 0.72)
+    );
+
+  box-shadow:
+    0 0 0 3px rgba(86, 217, 255, 0.09),
+    0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.formSide select {
+  cursor: pointer;
+}
+
+.formSide select option {
+  color: #ffffff;
+  background: #081725;
+}
+
+/* =========================================================
+   BOTÓN PRINCIPAL
+   ========================================================= */
+
+.formSide form > button[type="submit"] {
+  width: 100%;
+
+  margin-top: 20px;
+  padding: 13px 16px;
+
+  color: #04131e;
+
+  border: 0;
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #53d8ff,
+      #69e3b5
+    );
+
+  font-weight: 800;
+
+  box-shadow:
+    0 13px 30px rgba(70, 211, 239, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.formSide form > button[type="submit"]:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  filter: brightness(1.04);
+
+  box-shadow:
+    0 18px 38px rgba(67, 213, 236, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42);
+}
+
+.formSide form > button[type="submit"]:active:not(:disabled) {
+  transform: translateY(0);
+
+  box-shadow:
+    0 9px 22px rgba(67, 213, 236, 0.16);
+}
+
+.formSide form > button[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* =========================================================
+   NOTA Y ERRORES
+   ========================================================= */
+
+.formSide small {
+  display: block;
+
+  margin-top: 14px;
+
+  color: #94adbd;
+
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.error {
+  margin-top: 14px;
+  padding: 10px 12px;
+
+  color: #ffadb4;
+
+  border: 1px solid rgba(255, 123, 131, 0.22);
+  border-radius: 10px;
+
+  background: rgba(92, 23, 33, 0.32);
+
+  font-size: 13px;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* =========================================================
+   RESPONSIVE — LAPTOP PEQUEÑA
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .page {
+    grid-template-columns: 1fr 0.82fr;
+  }
+
+  .hero {
+    padding: 34px 34px 30px 58px;
+  }
+
+  .heroCopy h1 {
+    font-size: 55px;
+    letter-spacing: -2px;
+  }
+
+  .heroFeatures {
+    gap: 18px;
+  }
+
+  .metricDivider {
+    margin: 0 16px;
+  }
+
+  .formSide {
+    padding: 26px 34px 26px 18px;
+  }
+
+  .formSide form {
+    padding: 28px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 980px) {
+  .page {
+    display: block;
+
+    min-height: 100vh;
+
+    overflow-y: auto;
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(3, 12, 22, 0.56) 0%,
+        rgba(3, 13, 23, 0.44) 42%,
+        rgba(4, 11, 23, 0.62) 100%
+      ),
+      url("/login-bg-minera.png") center center / cover fixed no-repeat;
+  }
+
+  .hero {
+    min-height: 650px;
+    padding: 30px 28px;
+
+    border-right: 0;
+    border-bottom: 1px solid rgba(148, 198, 224, 0.15);
+  }
+
+  .heroCopy {
+    margin: 70px 0 62px;
+  }
+
+  .heroCopy h1 {
+    max-width: 670px;
+
+    font-size: 51px;
+  }
+
+  .heroCopy > p {
+    max-width: 570px;
+  }
+
+  .formSide {
+    min-height: 620px;
+
+    justify-content: center;
+
+    padding: 56px 24px;
+  }
+
+  .formSide::before {
+    height: 500px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MÓVIL HORIZONTAL / TABLET PEQUEÑA
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 620px;
+
+    padding: 26px 22px;
+  }
+
+  .heroCopy {
+    margin: 58px 0 50px;
+  }
+
+  .heroCopy h1 {
+    font-size: 43px;
+    line-height: 1.01;
+    letter-spacing: -1.8px;
+  }
+
+  .heroFeatures {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .feature {
+    max-width: 100%;
+  }
+
+  .heroMetrics {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    row-gap: 16px;
+  }
+
+.heroMetrics article {
+padding-right: 18px;
+}
+
+.heroMetrics strong {
+font-size: 26px;
+}
+
+.metricDivider {
+height: 46px;
+margin: 0 18px 0 0;
+}
+
+  .formSide {
+    min-height: 580px;
+
+    justify-content: center;
+
+    padding: 44px 20px;
+  }
+
+  .roleCards {
+    grid-template-columns: 1fr;
+  }
+
+  .roleCard {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MÓVIL
+   ========================================================= */
+
+@media (max-width: 520px) {
+  .page {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(2, 10, 19, 0.54),
+        rgba(3, 11, 22, 0.68)
+      ),
+      url("/login-bg-minera.png") 66% center / cover fixed no-repeat;
+  }
+
+  .hero {
+    min-height: auto;
+
+    padding: 23px 19px 24px;
+  }
+
+  .brandIcon {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 13px;
+  }
+
+  .brandText strong {
+    font-size: 16px;
+  }
+
+  .brandText span {
+    font-size: 9px;
+  }
+
+  .heroCopy {
+    margin: 52px 0 45px;
+  }
+
+  .heroBadge {
+    max-width: 100%;
+
+    font-size: 9px;
+  }
+
+  .heroCopy h1 {
+    font-size: 38px;
+    line-height: 1.02;
+    letter-spacing: -1.5px;
+  }
+
+  .heroCopy h1 span {
+    margin-top: 7px;
+  }
+
+  .heroCopy > p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .heroFeatures {
+    display: none;
+  }
+
+  .heroMetrics {
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 14px 0;
+}
+
+.heroMetrics article {
+  padding-right: 14px;
+}
+
+.heroMetrics strong {
+  font-size: 24px;
+}
+
+.heroMetrics span {
+  font-size: 10px;
+}
+
+.metricDivider {
+  height: 40px;
+  margin: 0 14px 0 0;
+}
+
+  .heroFooter {
+    display: none;
+  }
+
+  .formSide {
+    min-height: auto;
+
+    padding: 40px 15px 46px;
+  }
+
+  .formSide form {
+    padding: 23px;
+
+    border-radius: 20px;
+  }
+
+  .formSide h2 {
+    font-size: 24px;
+  }
+
+  .formSide p {
+    font-size: 13px;
+  }
+
+  .roleCards {
+    grid-template-columns: 1fr;
+  }
+
+  .roleCard {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .roleCardContent strong {
+    font-size: 13px;
+  }
+
+  .roleCardContent span {
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   PANTALLAS MUY PEQUEÑAS
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .heroCopy h1 {
+    font-size: 34px;
+  }
+
+  .heroMetrics strong {
+  font-size: 21px;
+}
+
+.heroMetrics span {
+  font-size: 9px;
+}
+
+.metricDivider {
+  height: 34px;
+  margin: 0 10px 0 0;
+}
+}
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .feature {
+    max-width: 100%;
+  }
+
+  .heroMetrics {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    row-gap: 16px;
+  }
+
+.heroMetrics article {
+padding-right: 18px;
+}
+
+.heroMetrics strong {
+font-size: 26px;
+}
+
+.metricDivider {
+height: 46px;
+margin: 0 18px 0 0;
+}
+
+  .formSide {
+    min-height: 580px;
+
+    justify-content: center;
+
+    padding: 44px 20px;
+  }
+
+  .roleCards {
+    grid-template-columns: 1fr;
+  }
+
+  .roleCard {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MÓVIL
+   ========================================================= */
+
+@media (max-width: 520px) {
+  .page {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(2, 10, 19, 0.54),
+        rgba(3, 11, 22, 0.68)
+      ),
+      url("/login-bg-minera.png") 66% center / cover fixed no-repeat;
+  }
+
+  .hero {
+    min-height: auto;
+
+    padding: 23px 19px 24px;
+  }
+
+  .brandIcon {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 13px;
+  }
+
+  .brandText strong {
+    font-size: 16px;
+  }
+
+  .brandText span {
+    font-size: 9px;
+  }
+
+  .heroCopy {
+    margin: 52px 0 45px;
+  }
+
+  .heroBadge {
+    max-width: 100%;
+
+    font-size: 9px;
+  }
+
+  .heroCopy h1 {
+    font-size: 38px;
+    line-height: 1.02;
+    letter-spacing: -1.5px;
+  }
+
+  .heroCopy h1 span {
+    margin-top: 7px;
+  }
+
+  .heroCopy > p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .heroFeatures {
+    display: none;
+  }
+
+  .heroMetrics {
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 14px 0;
+}
+
+.heroMetrics article {
+  padding-right: 14px;
+}
+
+.heroMetrics strong {
+  font-size: 24px;
+}
+
+.heroMetrics span {
+  font-size: 10px;
+}
+
+.metricDivider {
+  height: 40px;
+  margin: 0 14px 0 0;
+}
+
+  .heroFooter {
+    display: none;
+  }
+
+  .formSide {
+    min-height: auto;
+
+    padding: 40px 15px 46px;
+  }
+
+  .formSide form {
+    padding: 23px;
+
+    border-radius: 20px;
+  }
+
+  .formSide h2 {
+    font-size: 24px;
+  }
+
+  .formSide p {
+    font-size: 13px;
+  }
+
+  .roleCards {
+    grid-template-columns: 1fr;
+  }
+
+  .roleCard {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .roleCardContent strong {
+    font-size: 13px;
+  }
+
+  .roleCardContent span {
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   PANTALLAS MUY PEQUEÑAS
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .heroCopy h1 {
+    font-size: 34px;
+  }
+
+  .heroMetrics strong {
+  font-size: 21px;
+}
+
+.heroMetrics span {
+  font-size: 9px;
+}
+
+.metricDivider {
+  height: 34px;
+  margin: 0 10px 0 0;
+}
+}

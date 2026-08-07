@@ -1,0 +1,1120 @@
+.page {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 22px;
+}
+
+.eyebrow {
+  color: #55d8eb;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+.hero h1 {
+  margin:
+    8px 0
+    6px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      30px,
+      3vw,
+      40px
+    );
+
+  line-height: 1.15;
+}
+
+.hero p {
+  margin: 0;
+
+  color: #82a2b1;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+}
+
+
+.refreshButton {
+  min-height: 44px;
+
+  padding: 0 16px;
+
+  border:
+    1px solid
+    rgba(
+      76,
+      156,
+      185,
+      0.35
+    );
+
+  border-radius: 11px;
+
+  background:
+    rgba(
+      5,
+      27,
+      42,
+      0.8
+    );
+
+  color: #e5f5f8;
+
+  font: inherit;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+/* =========================================================
+   REALTIME
+========================================================= */
+
+.realtime {
+  min-height: 42px;
+
+  padding: 0 15px;
+
+  border:
+    1px solid
+    rgba(
+      71,
+      149,
+      177,
+      0.24
+    );
+
+  border-radius: 11px;
+
+  background:
+    rgba(
+      5,
+      29,
+      43,
+      0.65
+    );
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  color: #7798a7;
+
+  font-size: 11px;
+}
+
+.realtime span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #c4dae2;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.realtime i {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #63e0b9;
+
+  box-shadow:
+    0 0 8px
+    rgba(
+      99,
+      224,
+      185,
+      0.6
+    );
+}
+
+
+/* =========================================================
+   KPI
+========================================================= */
+
+.kpis {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 13px;
+}
+
+.kpis button {
+  min-height: 138px;
+
+  padding: 17px;
+
+  border:
+    1px solid
+    rgba(
+      71,
+      145,
+      174,
+      0.27
+    );
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        10,
+        42,
+        58,
+        0.95
+      ),
+      rgba(
+        6,
+        27,
+        41,
+        0.95
+      )
+    );
+
+  color: #55d9e9;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 7px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.kpis button:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(
+      77,
+      215,
+      233,
+      0.48
+    );
+}
+
+.kpis button > span {
+  margin-top: 5px;
+
+  color: #a8c3cf;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.kpis strong {
+  color: #ffffff;
+
+  font-size: 30px;
+
+  line-height: 1;
+}
+
+.kpis small {
+  color: #7394a3;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   ANALÍTICA
+========================================================= */
+
+.analytics {
+  display: grid;
+
+  grid-template-columns:
+    1.4fr
+    1fr
+    0.65fr;
+
+  gap: 14px;
+}
+
+.panel,
+.score {
+  padding: 19px;
+
+  border:
+    1px solid
+    rgba(
+      74,
+      143,
+      173,
+      0.25
+    );
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        12,
+        38,
+        55,
+        0.96
+      ),
+      rgba(
+        7,
+        28,
+        42,
+        0.96
+      )
+    );
+}
+
+
+/* =========================================================
+   PANEL
+========================================================= */
+
+.panelTitle {
+  margin-bottom: 18px;
+
+  color: #56d9e9;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.panelTitle h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 17px;
+}
+
+.panelTitle span {
+  color: #6d8f9f;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   CUMPLIMIENTO
+========================================================= */
+
+.compliance {
+  display: grid;
+
+  grid-template-columns:
+    185px
+    1fr;
+
+  align-items: center;
+
+  gap: 22px;
+}
+
+.donut {
+  --value: 0deg;
+
+  width: 155px;
+
+  aspect-ratio: 1;
+
+  margin: auto;
+
+  padding: 12px;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      #55d8e9
+        var(--value),
+      rgba(
+        62,
+        105,
+        124,
+        0.17
+      )
+        0
+    );
+
+  position: relative;
+}
+
+.donut::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 13px;
+
+  border-radius: 50%;
+
+  background:
+    #092437;
+}
+
+.donutInside {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.donutInside strong {
+  color: #ffffff;
+
+  font-size: 32px;
+}
+
+.donutInside span {
+  color: #7594a2;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   BARRAS
+========================================================= */
+
+.bars {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+}
+
+.bar > div:first-child {
+  margin-bottom: 6px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #7899a8;
+
+  font-size: 11px;
+}
+
+.bar strong {
+  color: #ddecf2;
+
+  font-size: 11px;
+}
+
+.barTrack {
+  height: 7px;
+
+  border-radius: 50px;
+
+  background:
+    rgba(
+      70,
+      112,
+      129,
+      0.17
+    );
+
+  overflow: hidden;
+}
+
+.barTrack > div {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #53d5e8,
+      #6de1bd
+    );
+}
+
+
+/* =========================================================
+   RIESGOS
+========================================================= */
+
+.riskGrid,
+.statusGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 9px;
+}
+
+.riskGrid > div,
+.statusGrid > div {
+  min-height: 88px;
+
+  padding: 13px;
+
+  border:
+    1px solid
+    rgba(
+      73,
+      139,
+      165,
+      0.18
+    );
+
+  border-radius: 10px;
+
+  background:
+    rgba(
+      5,
+      27,
+      40,
+      0.55
+    );
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 4px;
+}
+
+.riskGrid strong,
+.statusGrid strong {
+  color: #ffffff;
+
+  font-size: 24px;
+}
+
+.riskGrid span,
+.statusGrid span {
+  color: #718f9d;
+
+  font-size: 10px;
+}
+
+.totalRisk {
+  margin:
+    12px 0
+    0;
+
+  color: #738f9c;
+
+  font-size: 11px;
+}
+
+.totalRisk strong {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SCORE
+========================================================= */
+
+.score {
+  min-height: 190px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.score > span {
+  color: #7697a6;
+
+  font-size: 12px;
+}
+
+.score > strong {
+  margin:
+    5px 0
+    1px;
+
+  color: #ffffff;
+
+  font-size: 50px;
+
+  line-height: 1;
+}
+
+.score > small {
+  color: #58d7e8;
+
+  font-size: 11px;
+}
+
+.score > div {
+  height: 8px;
+
+  margin-top: 17px;
+
+  border-radius: 50px;
+
+  background:
+    rgba(
+      71,
+      112,
+      129,
+      0.17
+    );
+
+  overflow: hidden;
+}
+
+.score i {
+  display: block;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #54d7e9,
+      #6be1bc
+    );
+}
+
+
+/* =========================================================
+   COLUMNAS
+========================================================= */
+
+.twoColumns {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   ACTIVIDAD
+========================================================= */
+
+.activityList {
+  display: flex;
+
+  flex-direction: column;
+
+  max-height: 360px;
+
+  overflow-y: auto;
+
+  padding-right: 5px;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(
+      82,
+      215,
+      233,
+      0.45
+    )
+    rgba(
+      18,
+      52,
+      68,
+      0.35
+    );
+}
+
+.activityList::-webkit-scrollbar {
+  width: 7px;
+}
+
+.activityList::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+
+  background:
+    rgba(
+      82,
+      215,
+      233,
+      0.45
+    );
+}
+
+
+.activityList button {
+  width: 100%;
+
+  min-height: 62px;
+
+  padding: 12px 3px;
+
+  border: 0;
+
+  border-bottom:
+    1px solid
+    rgba(
+      72,
+      126,
+      148,
+      0.13
+    );
+
+  background:
+    transparent;
+
+  color: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  display: grid;
+
+  grid-template-columns:
+    38px
+    1fr
+    auto;
+
+  align-items: center;
+
+  gap: 11px;
+}
+
+.activityList button:hover {
+  background:
+    rgba(
+      55,
+      137,
+      160,
+      0.05
+    );
+}
+
+.activityIcon {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 9px;
+
+  background:
+    rgba(
+      73,
+      198,
+      220,
+      0.09
+    );
+
+  color: #57d7e9;
+
+  display: grid;
+
+  place-items: center;
+}
+
+.activityText {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.activityText strong {
+  color: #e4f1f5;
+
+  font-size: 12px;
+}
+
+.activityText > span {
+  color: #6e8e9c;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.activityList small {
+  color: #6c8b98;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error {
+  padding: 12px 14px;
+
+  border:
+    1px solid
+    rgba(
+      236,
+      91,
+      112,
+      0.34
+    );
+
+  border-radius: 10px;
+
+  background:
+    rgba(
+      94,
+      25,
+      39,
+      0.5
+    );
+
+  color: #ffd2da;
+
+  font-size: 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.error span {
+  flex: 1;
+}
+
+.error button {
+  border: 0;
+
+  background: none;
+
+  color: inherit;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   EMPTY / LOADING
+========================================================= */
+
+.empty,
+.loading {
+  min-height: 190px;
+
+  color: #6e8f9d;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  text-align: center;
+}
+
+.loading {
+  min-height: 65vh;
+}
+
+.empty strong,
+.loading strong {
+  color: #dcecf1;
+
+  font-size: 15px;
+}
+
+.empty span,
+.loading span {
+  max-width: 500px;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.loading button {
+  padding:
+    10px
+    15px;
+
+  border:
+    1px solid
+    rgba(
+      80,
+      204,
+      225,
+      0.35
+    );
+
+  border-radius: 9px;
+
+  background:
+    rgba(
+      8,
+      40,
+      55,
+      0.8
+    );
+
+  color: #e3f6f9;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+
+  border:
+    3px solid
+    rgba(
+      74,
+      207,
+      227,
+      0.15
+    );
+
+  border-top-color:
+    #52d7e9;
+
+  border-radius: 50%;
+
+  animation:
+    rotate
+    0.8s
+    linear
+    infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform:
+      rotate(
+        360deg
+      );
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (
+  max-width: 1350px
+) {
+  .analytics {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+  .score {
+    grid-column:
+      1 / -1;
+  }
+}
+
+
+@media (
+  max-width: 1000px
+) {
+  .kpis {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+  .analytics,
+  .twoColumns {
+    grid-template-columns:
+      1fr;
+  }
+
+  .score {
+    grid-column: auto;
+  }
+}
+
+
+@media (
+  max-width: 700px
+) {
+  .hero {
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+  }
+
+  .refreshButton {
+    align-self:
+      flex-start;
+  }
+
+  .compliance {
+    grid-template-columns:
+      1fr;
+  }
+
+  .riskGrid,
+  .statusGrid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+  .activityList {
+    max-height: 300px;
+  }
+}
+
+
+@media (
+  max-width: 500px
+) {
+  .kpis {
+    grid-template-columns:
+      1fr;
+  }
+
+  .realtime {
+    min-height: auto;
+
+    padding:
+      10px
+      12px;
+
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap: 5px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .riskGrid,
+  .statusGrid {
+    grid-template-columns:
+      1fr;
+  }
+}

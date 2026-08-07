@@ -1,0 +1,771 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* =========================================================
+   ACCIONES DEL ENCABEZADO
+   ========================================================= */
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.secondaryButton,
+.clearButton {
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid rgba(111, 164, 191, 0.27);
+  border-radius: 11px;
+  background: rgba(10, 32, 48, 0.82);
+  color: #dcecf4;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.secondaryButton:hover,
+.clearButton:hover {
+  border-color: rgba(90, 217, 238, 0.5);
+  background: rgba(13, 44, 63, 0.92);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.secondaryButton:disabled,
+.clearButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================================
+   ESTADO REALTIME
+   ========================================================= */
+
+.realtimeBar {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(75, 142, 174, 0.22);
+  border-radius: 12px;
+  background: rgba(8, 28, 43, 0.62);
+  color: #90adbd;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.realtimeStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #b9d5df;
+  font-weight: 600;
+}
+
+.realtimeDot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #61e6c3;
+  box-shadow: 0 0 12px rgba(97, 230, 195, 0.75);
+}
+
+/* =========================================================
+   MENSAJES DE ERROR
+   ========================================================= */
+
+.errorBanner,
+.formError {
+  padding: 13px 15px;
+  border: 1px solid rgba(247, 116, 132, 0.35);
+  border-radius: 12px;
+  background: rgba(79, 21, 35, 0.58);
+  color: #ffd0d6;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.errorBanner span {
+  flex: 1;
+}
+
+.errorBanner button {
+  margin-left: auto;
+  padding: 3px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+/* =========================================================
+   TARJETAS DE RESUMEN
+   ========================================================= */
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.summaryCard {
+  min-height: 116px;
+  padding: 18px;
+  border: 1px solid rgba(85, 145, 175, 0.25);
+  border-radius: 16px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(14, 42, 60, 0.92),
+      rgba(8, 27, 42, 0.94)
+    );
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.summaryCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(82, 211, 235, 0.36);
+}
+
+.summaryIcon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+  color: #052b34;
+  background:
+    linear-gradient(
+      135deg,
+      #54d8f1,
+      #65e0bd
+    );
+  display: grid;
+  place-items: center;
+  box-shadow:
+    0 8px 24px rgba(84, 216, 241, 0.18);
+}
+
+.summaryCard > div:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryCard span {
+  color: #c8dde8;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.summaryCard strong {
+  margin-top: 4px;
+  color: #ffffff;
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+.summaryCard small {
+  margin-top: 5px;
+  color: #7898aa;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   FILTROS
+   ========================================================= */
+
+.filters {
+  display: grid;
+  grid-template-columns:
+    minmax(260px, 1.5fr)
+    repeat(4, minmax(145px, 1fr));
+  gap: 10px;
+  padding-bottom: 16px;
+  border-bottom:
+    1px solid rgba(91, 138, 164, 0.19);
+}
+
+.searchField {
+  position: relative;
+}
+
+.searchField svg {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7597aa;
+  pointer-events: none;
+}
+
+.searchField input,
+.filters select,
+.formGrid input,
+.formGrid select,
+.formGrid textarea {
+  width: 100%;
+  border: 1px solid rgba(92, 148, 177, 0.29);
+  border-radius: 11px;
+  outline: none;
+  background: rgba(5, 25, 39, 0.82);
+  color: #e8f4f8;
+  font: inherit;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.searchField input,
+.filters select,
+.formGrid input,
+.formGrid select {
+  min-height: 42px;
+  padding: 0 13px;
+}
+
+.searchField input {
+  padding-left: 42px;
+}
+
+.searchField input::placeholder,
+.formGrid input::placeholder,
+.formGrid textarea::placeholder {
+  color: #67889a;
+}
+
+.filters select,
+.formGrid select {
+  cursor: pointer;
+}
+
+.filters select option,
+.formGrid select option {
+  background: #0a2233;
+  color: #e8f4f8;
+}
+
+.formGrid textarea {
+  min-height: 96px;
+  padding: 12px 13px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.searchField input:focus,
+.filters select:focus,
+.formGrid input:focus,
+.formGrid select:focus,
+.formGrid textarea:focus {
+  border-color: rgba(82, 211, 235, 0.7);
+  box-shadow:
+    0 0 0 3px rgba(82, 211, 235, 0.09);
+  background: rgba(6, 30, 45, 0.94);
+}
+
+.clearButton {
+  grid-column: 1 / 2;
+  justify-self: start;
+}
+
+/* =========================================================
+   CABECERA DE TABLA
+   ========================================================= */
+
+.tableHeader {
+  padding: 18px 0 13px;
+}
+
+.tableHeader h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.tableHeader span {
+  display: block;
+  margin-top: 5px;
+  color: #7898aa;
+  font-size: 12px;
+}
+
+/* =========================================================
+   TABLA
+   ========================================================= */
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+.table {
+  width: 100%;
+  min-width: 1150px;
+  border-collapse: collapse;
+}
+
+.table th {
+  padding: 11px;
+  border-bottom:
+    1px solid rgba(80, 133, 161, 0.21);
+  color: #718fa1;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 13px 11px;
+  border-bottom:
+    1px solid rgba(80, 133, 161, 0.16);
+  color: #b9ced9;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background: rgba(45, 104, 132, 0.07);
+}
+
+.mainCell {
+  min-width: 170px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mainCell strong {
+  color: #eef9fc;
+  line-height: 1.4;
+}
+
+.mainCell span {
+  color: #7695a7;
+  font-size: 11px;
+}
+
+.rowActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.rowActions button {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(91, 148, 178, 0.25);
+  border-radius: 9px;
+  background: rgba(7, 28, 43, 0.82);
+  color: #92b3c4;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.rowActions button:hover {
+  border-color: rgba(84, 216, 241, 0.55);
+  background: rgba(12, 43, 61, 0.96);
+  color: #5ddcf2;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   ESTADOS DE CARGA Y VACÍO
+   ========================================================= */
+
+.loadingState,
+.emptyState {
+  min-height: 280px;
+  color: #7f9dad;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.loadingState svg,
+.emptyState svg {
+  color: #4fd9f0;
+}
+
+.emptyState h3 {
+  margin: 4px 0 0;
+  color: #ffffff;
+}
+
+.emptyState p {
+  max-width: 430px;
+  margin: 0 0 9px;
+  color: #7898aa;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   MODAL Y DRAWER
+   ========================================================= */
+
+.modalBackdrop,
+.drawerBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 10, 18, 0.73);
+  backdrop-filter: blur(5px);
+}
+
+.modalBackdrop {
+  padding: 20px;
+  display: grid;
+  place-items: center;
+}
+
+.modal {
+  width: min(760px, 100%);
+  max-height: 92vh;
+  overflow-y: auto;
+  border: 1px solid rgba(82, 156, 187, 0.31);
+  border-radius: 18px;
+  background: #091d2c;
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.52);
+}
+
+.modalHeader,
+.drawerHeader {
+  padding: 18px 21px;
+  border-bottom:
+    1px solid rgba(88, 143, 171, 0.21);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.modalHeader span,
+.drawerHeader span {
+  color: #50d7f4;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.modalHeader h2,
+.drawerHeader h2 {
+  margin: 4px 0 0;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.modalHeader p {
+  margin: 6px 0 0;
+  color: #7898aa;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.modalHeader button,
+.drawerHeader button {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: #a8c1ce;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.modalHeader button:hover,
+.drawerHeader button:hover {
+  border-color: rgba(91, 148, 178, 0.25);
+  background: rgba(15, 49, 68, 0.7);
+  color: #ffffff;
+}
+
+.modalHeader button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.modalForm {
+  padding: 20px;
+}
+
+/* =========================================================
+   FORMULARIOS
+   ========================================================= */
+
+.formGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.formGrid label {
+  color: #b8ced9;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.fullField {
+  grid-column: 1 / -1;
+}
+
+.formError {
+  margin-top: 15px;
+}
+
+.modalFooter,
+.drawerFooter {
+  padding: 18px 21px;
+  border-top:
+    1px solid rgba(88, 143, 171, 0.21);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modalFooter {
+  margin:
+    20px
+    -20px
+    -20px;
+}
+
+/* =========================================================
+   DRAWER DE DETALLE
+   ========================================================= */
+
+.drawerBackdrop {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.drawer {
+  width: min(520px, 100%);
+  height: 100%;
+  border-left:
+    1px solid rgba(82, 156, 187, 0.31);
+  background: #091d2c;
+  box-shadow:
+    -20px 0 60px rgba(0, 0, 0, 0.32);
+  display: flex;
+  flex-direction: column;
+}
+
+.drawerBody {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.detailBadges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.detailList {
+  margin: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.detailList > div {
+  padding: 14px 0;
+  border-bottom:
+    1px solid rgba(85, 139, 166, 0.18);
+}
+
+.detailList dt {
+  color: #7898a9;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.detailList dd {
+  margin: 6px 0 0;
+  color: #e8f4f8;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+
+.spinning {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .summaryGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .filters {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .searchField {
+    grid-column: 1 / -1;
+  }
+
+  .clearButton {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .page {
+    gap: 16px;
+  }
+
+  .headerActions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .headerActions > * {
+    flex: 1 1 100%;
+  }
+
+  .summaryGrid,
+  .filters,
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .searchField,
+  .clearButton,
+  .fullField {
+    grid-column: auto;
+  }
+
+  .clearButton {
+    width: 100%;
+  }
+
+  .realtimeBar {
+    padding: 10px 13px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .modalBackdrop {
+    padding: 10px;
+  }
+
+  .modal {
+    max-height: 96vh;
+    border-radius: 14px;
+  }
+
+  .modalHeader,
+  .drawerHeader {
+    padding: 16px;
+  }
+
+  .modalForm,
+  .drawerBody {
+    padding: 16px;
+  }
+
+  .modalFooter,
+  .drawerFooter {
+    padding: 16px;
+    flex-direction: column-reverse;
+  }
+
+  .modalFooter > *,
+  .drawerFooter > * {
+    width: 100%;
+  }
+
+  .modalFooter {
+    margin:
+      18px
+      -16px
+      -16px;
+  }
+
+  .drawer {
+    width: 100%;
+  }
+}

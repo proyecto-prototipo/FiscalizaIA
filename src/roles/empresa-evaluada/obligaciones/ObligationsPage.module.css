@@ -1,0 +1,1638 @@
+.page {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.eyebrow {
+  color: #55d8eb;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+.hero h1 {
+  margin:
+    7px 0
+    5px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      28px,
+      3vw,
+      38px
+    );
+}
+
+.hero p {
+  margin: 0;
+
+  color: #82a2b1;
+
+  font-size: 12px;
+}
+
+
+.refreshButton {
+  min-height: 40px;
+
+  padding: 0 14px;
+
+  border:
+    1px solid
+    rgba(
+      76,
+      157,
+      186,
+      0.35
+    );
+
+  border-radius: 11px;
+
+  background:
+    rgba(
+      5,
+      28,
+      42,
+      0.8
+    );
+
+  color: #e4f5f8;
+
+  font: inherit;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+/* =========================================================
+   REALTIME
+========================================================= */
+
+.realtime {
+  min-height: 38px;
+
+  padding: 0 13px;
+
+  border:
+    1px solid
+    rgba(
+      70,
+      149,
+      178,
+      0.24
+    );
+
+  border-radius: 11px;
+
+  background:
+    rgba(
+      5,
+      29,
+      43,
+      0.65
+    );
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  color: #7797a5;
+
+  font-size: 9px;
+}
+
+.realtime span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #c3d9e1;
+
+  font-weight: 700;
+}
+
+.realtime i {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #63dfb8;
+
+  box-shadow:
+    0 0 8px
+    rgba(
+      99,
+      223,
+      184,
+      0.6
+    );
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      6,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 10px;
+}
+
+.summary > div {
+  min-height: 93px;
+
+  padding: 13px;
+
+  border:
+    1px solid
+    rgba(
+      71,
+      145,
+      174,
+      0.24
+    );
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        10,
+        42,
+        58,
+        0.95
+      ),
+      rgba(
+        6,
+        27,
+        41,
+        0.95
+      )
+    );
+
+  color: #55d8e8;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+}
+
+.summary svg {
+  width: 20px;
+}
+
+.summary span {
+  color: #7898a7;
+
+  font-size: 9px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.summary strong {
+  color: #ffffff;
+
+  font-size: 22px;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.filters {
+  padding: 13px;
+
+  border:
+    1px solid
+    rgba(
+      72,
+      143,
+      173,
+      0.24
+    );
+
+  border-radius: 14px;
+
+  background:
+    rgba(
+      8,
+      32,
+      47,
+      0.77
+    );
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(
+      220px,
+      1.4fr
+    )
+    repeat(
+      4,
+      minmax(
+        140px,
+        1fr
+      )
+    );
+
+  gap: 9px;
+}
+
+
+.search {
+  min-height: 40px;
+
+  padding: 0 11px;
+
+  border:
+    1px solid
+    rgba(
+      74,
+      143,
+      170,
+      0.28
+    );
+
+  border-radius: 10px;
+
+  background:
+    #061d2c;
+
+  color: #6fa3b5;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.search input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #dcecf2;
+
+  font: inherit;
+
+  font-size: 10px;
+}
+
+
+.filters select {
+  min-height: 40px;
+
+  padding: 0 10px;
+
+  border:
+    1px solid
+    rgba(
+      74,
+      143,
+      170,
+      0.28
+    );
+
+  border-radius: 10px;
+
+  outline: 0;
+
+  background:
+    #061d2c;
+
+  color: #d8e8ed;
+
+  font: inherit;
+
+  font-size: 10px;
+}
+
+
+.checkbox {
+  min-height: 38px;
+
+  color: #8ca7b3;
+
+  font-size: 9px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.clearButton {
+  min-height: 38px;
+
+  padding: 0 12px;
+
+  border:
+    1px solid
+    rgba(
+      76,
+      150,
+      178,
+      0.3
+    );
+
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #b4cbd4;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+}
+
+
+/* =========================================================
+   LISTADO
+========================================================= */
+
+.listPanel {
+  padding: 16px;
+
+  border:
+    1px solid
+    rgba(
+      72,
+      143,
+      173,
+      0.24
+    );
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        12,
+        38,
+        55,
+        0.96
+      ),
+      rgba(
+        7,
+        28,
+        42,
+        0.96
+      )
+    );
+}
+
+
+.listHeader {
+  margin-bottom: 14px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.listHeader h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 14px;
+}
+
+.listHeader span {
+  color: #718f9d;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.listScroll {
+  max-height: 620px;
+
+  padding-right: 5px;
+
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(
+      82,
+      215,
+      233,
+      0.45
+    )
+    rgba(
+      18,
+      52,
+      68,
+      0.35
+    );
+}
+
+.listScroll::-webkit-scrollbar {
+  width: 7px;
+}
+
+.listScroll::-webkit-scrollbar-track {
+  background:
+    rgba(
+      18,
+      52,
+      68,
+      0.35
+    );
+
+  border-radius: 20px;
+}
+
+.listScroll::-webkit-scrollbar-thumb {
+  background:
+    rgba(
+      82,
+      215,
+      233,
+      0.45
+    );
+
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.obligationCard {
+  padding: 15px;
+
+  border:
+    1px solid
+    rgba(
+      72,
+      140,
+      167,
+      0.2
+    );
+
+  border-radius: 13px;
+
+  background:
+    rgba(
+      5,
+      27,
+      41,
+      0.6
+    );
+}
+
+
+.cardHeader {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.codeRow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+
+.code,
+.criticality,
+.expiredBadge,
+.status {
+  display: inline-flex;
+
+  padding:
+    5px
+    8px;
+
+  border-radius: 7px;
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+
+.code {
+  background:
+    rgba(
+      72,
+      205,
+      226,
+      0.1
+    );
+
+  color: #58d8e9;
+}
+
+
+.criticality {
+  background:
+    rgba(
+      70,
+      124,
+      146,
+      0.12
+    );
+}
+
+
+.high {
+  color: #ee7c8d;
+}
+
+.medium {
+  color: #efbf66;
+}
+
+.low {
+  color: #65dcb2;
+}
+
+
+.expiredBadge {
+  background:
+    rgba(
+      221,
+      74,
+      96,
+      0.12
+    );
+
+  color: #f18494;
+}
+
+
+.status {
+  background:
+    rgba(
+      69,
+      149,
+      174,
+      0.13
+    );
+
+  color: #8fc6d4;
+
+  flex-shrink: 0;
+}
+
+
+.cardHeader h2 {
+  margin:
+    8px 0
+    4px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+}
+
+
+.cardHeader p {
+  max-width: 800px;
+
+  margin: 0;
+
+  color: #7897a5;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.details {
+  margin-top: 14px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 8px;
+}
+
+
+.details > div {
+  min-height: 61px;
+
+  padding: 9px;
+
+  border:
+    1px solid
+    rgba(
+      69,
+      132,
+      158,
+      0.14
+    );
+
+  border-radius: 9px;
+
+  background:
+    rgba(
+      4,
+      23,
+      35,
+      0.45
+    );
+
+  color: #55d7e9;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.details span {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.details small {
+  color: #6d8e9c;
+
+  font-size: 8px;
+}
+
+
+.details strong {
+  color: #dae9ef;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   EVIDENCIA
+========================================================= */
+
+.requiredEvidence,
+.notes {
+  margin-top: 10px;
+
+  padding: 10px;
+
+  border-radius: 9px;
+
+  background:
+    rgba(
+      4,
+      23,
+      35,
+      0.45
+    );
+}
+
+
+.requiredEvidence span,
+.notes span {
+  color: #6f8f9d;
+
+  font-size: 8px;
+
+  text-transform: uppercase;
+}
+
+
+.requiredEvidence strong {
+  margin-top: 4px;
+
+  color: #dbeaf0;
+
+  font-size: 10px;
+
+  display: block;
+}
+
+
+.notes p {
+  margin:
+    4px 0
+    0;
+
+  color: #91a9b4;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   FOOTER CARD
+========================================================= */
+
+.cardFooter {
+  margin-top: 12px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+
+.cardFooter > div {
+  color: #6f98a7;
+
+  font-size: 9px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+
+.cardFooter button {
+  min-height: 36px;
+
+  padding: 0 11px;
+
+  border: 0;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #54d7e9,
+      #6ce2bf
+    );
+
+  color: #062936;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+
+/* =========================================================
+   ERROR / LOADING / EMPTY
+========================================================= */
+
+.error {
+  padding: 11px 13px;
+
+  border:
+    1px solid
+    rgba(
+      236,
+      91,
+      112,
+      0.33
+    );
+
+  border-radius: 10px;
+
+  background:
+    rgba(
+      92,
+      26,
+      39,
+      0.5
+    );
+
+  color: #ffd0d9;
+
+  display: flex;
+
+  gap: 8px;
+}
+
+
+.error span {
+  flex: 1;
+}
+
+
+.error button {
+  border: 0;
+
+  background: none;
+
+  color: inherit;
+
+  cursor: pointer;
+}
+
+
+.loading,
+.empty {
+  min-height: 180px;
+
+  color: #6e8f9d;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+
+.loading {
+  min-height: 65vh;
+}
+
+
+.loading strong,
+.empty strong {
+  color: #dbeaf0;
+}
+
+
+.loading span,
+.empty span {
+  max-width: 480px;
+
+  font-size: 10px;
+}
+
+
+.loading button {
+  padding:
+    9px
+    14px;
+
+  border:
+    1px solid
+    rgba(
+      76,
+      203,
+      224,
+      0.35
+    );
+
+  border-radius: 9px;
+
+  background:
+    rgba(
+      7,
+      38,
+      53,
+      0.8
+    );
+
+  color: #e5f5f8;
+
+  cursor: pointer;
+}
+
+
+.spinner {
+  width: 36px;
+  height: 36px;
+
+  border:
+    3px solid
+    rgba(
+      75,
+      207,
+      227,
+      0.15
+    );
+
+  border-top-color:
+    #52d7e9;
+
+  border-radius: 50%;
+
+  animation:
+    rotate
+    0.8s
+    linear
+    infinite;
+}
+
+
+@keyframes rotate {
+  to {
+    transform:
+      rotate(
+        360deg
+      );
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (
+  max-width: 1350px
+) {
+  .summary {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+  .filters {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+  .search {
+    grid-column:
+      span 2;
+  }
+}
+
+
+@media (
+  max-width: 900px
+) {
+  .details {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+  .filters {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+}
+
+
+@media (
+  max-width: 700px
+) {
+  .hero {
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+  }
+
+  .refreshButton {
+    align-self:
+      flex-start;
+  }
+
+  .summary {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+  .cardHeader,
+  .cardFooter {
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+  }
+
+  .cardFooter button {
+    justify-content:
+      center;
+  }
+
+  .listScroll {
+    max-height:
+      540px;
+  }
+}
+
+
+@media (
+  max-width: 520px
+) {
+  .filters,
+  .summary,
+  .details {
+    grid-template-columns:
+      1fr;
+  }
+
+  .search {
+    grid-column: auto;
+  }
+
+  .realtime {
+    min-height: auto;
+
+    padding:
+      10px
+      12px;
+
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+    gap: 5px;
+  }
+
+  .hero h1 {
+    font-size: 27px;
+  }
+}
+
+/* =========================================================
+   MEJORA DE LEGIBILIDAD
+   ESCALA NORMAL PARA PANTALLAS AL 100%
+========================================================= */
+
+/* ---------------------------------------------------------
+   ENCABEZADO
+--------------------------------------------------------- */
+
+.eyebrow {
+  font-size: 12px;
+}
+
+.hero p {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.refreshButton {
+  min-height: 44px;
+  padding: 0 16px;
+
+  font-size: 13px;
+}
+
+
+/* ---------------------------------------------------------
+   REALTIME
+--------------------------------------------------------- */
+
+.realtime {
+  min-height: 42px;
+
+  padding: 0 15px;
+
+  font-size: 11px;
+}
+
+.realtime span {
+  font-size: 11px;
+}
+
+.realtime small {
+  font-size: 10px;
+}
+
+
+/* ---------------------------------------------------------
+   TARJETAS RESUMEN
+--------------------------------------------------------- */
+
+.summary > div {
+  min-height: 105px;
+
+  padding: 15px;
+}
+
+.summary svg {
+  width: 22px;
+  height: 22px;
+}
+
+.summary span {
+  font-size: 11px;
+
+  gap: 5px;
+}
+
+.summary strong {
+  font-size: 26px;
+}
+
+
+/* ---------------------------------------------------------
+   FILTROS
+--------------------------------------------------------- */
+
+.filters {
+  padding: 15px;
+
+  gap: 11px;
+}
+
+.search {
+  min-height: 44px;
+
+  padding: 0 13px;
+}
+
+.search input {
+  font-size: 12px;
+}
+
+.search input::placeholder {
+  font-size: 11px;
+}
+
+.filters select {
+  min-height: 44px;
+
+  padding: 0 12px;
+
+  font-size: 12px;
+}
+
+.checkbox {
+  min-height: 42px;
+
+  font-size: 11px;
+}
+
+.checkbox input {
+  width: 16px;
+  height: 16px;
+}
+
+.clearButton {
+  min-height: 42px;
+
+  padding: 0 14px;
+
+  font-size: 11px;
+}
+
+
+/* ---------------------------------------------------------
+   CABECERA DEL LISTADO
+--------------------------------------------------------- */
+
+.listPanel {
+  padding: 18px;
+}
+
+.listHeader {
+  margin-bottom: 16px;
+}
+
+.listHeader h2 {
+  font-size: 17px;
+}
+
+.listHeader span {
+  font-size: 11px;
+}
+
+
+/* ---------------------------------------------------------
+   TARJETA DE OBLIGACIÓN
+--------------------------------------------------------- */
+
+.obligationCard {
+  padding: 18px;
+}
+
+.codeRow {
+  gap: 8px;
+}
+
+.code,
+.criticality,
+.expiredBadge,
+.status {
+  padding: 6px 9px;
+
+  font-size: 10px;
+}
+
+.cardHeader h2 {
+  margin:
+    10px 0
+    6px;
+
+  font-size: 18px;
+
+  line-height: 1.3;
+}
+
+.cardHeader p {
+  max-width: 950px;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   DETALLES DE LA OBLIGACIÓN
+--------------------------------------------------------- */
+
+.details {
+  margin-top: 16px;
+
+  gap: 10px;
+}
+
+.details > div {
+  min-height: 72px;
+
+  padding: 11px;
+}
+
+.details svg {
+  width: 19px;
+  height: 19px;
+
+  flex-shrink: 0;
+}
+
+.details small {
+  font-size: 10px;
+}
+
+.details strong {
+  margin-top: 2px;
+
+  font-size: 12px;
+
+  line-height: 1.35;
+}
+
+
+/* ---------------------------------------------------------
+   EVIDENCIA REQUERIDA / NOTA
+--------------------------------------------------------- */
+
+.requiredEvidence,
+.notes {
+  margin-top: 12px;
+
+  padding: 13px;
+}
+
+.requiredEvidence span,
+.notes span {
+  font-size: 10px;
+
+  letter-spacing: 0.3px;
+}
+
+.requiredEvidence strong {
+  margin-top: 6px;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.notes p {
+  margin:
+    6px 0
+    0;
+
+  font-size: 11px;
+
+  line-height: 1.55;
+}
+
+
+/* ---------------------------------------------------------
+   FOOTER DE LA OBLIGACIÓN
+--------------------------------------------------------- */
+
+.cardFooter {
+  margin-top: 15px;
+}
+
+.cardFooter > div {
+  font-size: 11px;
+}
+
+.cardFooter > div svg {
+  width: 18px;
+  height: 18px;
+}
+
+.cardFooter button {
+  min-height: 42px;
+
+  padding: 0 15px;
+
+  font-size: 11px;
+}
+
+.cardFooter button svg {
+  width: 18px;
+  height: 18px;
+}
+
+
+/* ---------------------------------------------------------
+   MENSAJES / ESTADOS
+--------------------------------------------------------- */
+
+.error {
+  font-size: 12px;
+}
+
+.loading strong,
+.empty strong {
+  font-size: 15px;
+}
+
+.loading span,
+.empty span {
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.listScroll {
+  max-height: 650px;
+
+  padding-right: 8px;
+
+  gap: 13px;
+}
+
+.listScroll::-webkit-scrollbar {
+  width: 9px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .cardHeader h2 {
+    font-size: 17px;
+  }
+
+  .cardHeader p {
+    font-size: 12px;
+  }
+
+  .details small {
+    font-size: 10px;
+  }
+
+  .details strong {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MÓVIL
+========================================================= */
+
+@media (max-width: 700px) {
+  .eyebrow {
+    font-size: 11px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .summary span {
+    font-size: 10px;
+  }
+
+  .summary strong {
+    font-size: 23px;
+  }
+
+  .cardHeader h2 {
+    font-size: 16px;
+  }
+
+  .cardHeader p {
+    font-size: 12px;
+  }
+
+  .code,
+  .criticality,
+  .expiredBadge,
+  .status {
+    font-size: 10px;
+  }
+
+  .details small {
+    font-size: 10px;
+  }
+
+  .details strong {
+    font-size: 12px;
+  }
+
+  .requiredEvidence strong {
+    font-size: 12px;
+  }
+
+  .notes p {
+    font-size: 11px;
+  }
+
+  .cardFooter > div {
+    font-size: 11px;
+  }
+
+  .cardFooter button {
+    min-height: 44px;
+
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MÓVIL PEQUEÑO
+========================================================= */
+
+@media (max-width: 520px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .listPanel {
+    padding: 13px;
+  }
+
+  .obligationCard {
+    padding: 14px;
+  }
+
+  .listHeader h2 {
+    font-size: 16px;
+  }
+
+  .listHeader span {
+    font-size: 10px;
+  }
+
+  .search input,
+  .filters select {
+    font-size: 12px;
+  }
+}
+
+
+
+

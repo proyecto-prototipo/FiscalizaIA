@@ -1,0 +1,815 @@
+.page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.secondaryButton {
+  min-height: 40px;
+  padding: 0 15px;
+
+  border: 1px solid rgba(81, 151, 181, 0.32);
+  border-radius: 11px;
+
+  background: rgba(7, 28, 43, 0.88);
+  color: #d9edf5;
+
+  font: inherit;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.secondaryButton:hover:not(:disabled) {
+  border-color: rgba(78, 214, 232, 0.58);
+  background: rgba(10, 41, 59, 0.95);
+}
+
+.secondaryButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.errorBanner,
+.successBanner {
+  padding: 13px 15px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.errorBanner {
+  border: 1px solid rgba(241, 91, 116, 0.36);
+  background: rgba(87, 24, 37, 0.68);
+  color: #ffd5dd;
+}
+
+.successBanner {
+  border: 1px solid rgba(91, 224, 172, 0.35);
+  background: rgba(20, 83, 65, 0.6);
+  color: #c8ffe9;
+}
+
+.errorBanner span,
+.successBanner span {
+  flex: 1;
+}
+
+.errorBanner button,
+.successBanner button {
+  width: 30px;
+  height: 30px;
+
+  border: 0;
+  background: transparent;
+  color: inherit;
+
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.sectionTitle {
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  color: #50d7ea;
+}
+
+.sectionTitle h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 17px;
+}
+
+.sectionTitle p {
+  margin: 5px 0 0;
+
+  color: #7897a8;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.formGrid label {
+  color: #bed3dd;
+  font-size: 12px;
+  font-weight: 700;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGrid input {
+  width: 100%;
+  min-height: 43px;
+  padding: 0 13px;
+
+  border: 1px solid rgba(88, 151, 180, 0.29);
+  border-radius: 11px;
+  outline: none;
+
+  background: rgba(5, 24, 38, 0.88);
+  color: #edf8fb;
+
+  font: inherit;
+}
+
+.formGrid input:focus {
+  border-color: rgba(78, 214, 232, 0.65);
+
+  box-shadow:
+    0 0 0 3px rgba(59, 206, 226, 0.08);
+}
+
+.labelIcon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.numberField {
+  position: relative;
+}
+
+.numberField input {
+  padding-right: 55px;
+}
+
+.numberField span {
+  position: absolute;
+  top: 50%;
+  right: 13px;
+
+  color: #7897a8;
+  font-size: 12px;
+
+  transform: translateY(-50%);
+}
+
+.switchGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.switchCard {
+  min-height: 108px;
+  padding: 16px;
+
+  border: 1px solid rgba(80, 145, 174, 0.25);
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8, 33, 49, 0.82),
+      rgba(5, 24, 38, 0.82)
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  cursor: pointer;
+}
+
+.switchCard:hover {
+  border-color: rgba(75, 212, 232, 0.48);
+}
+
+.switchContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+
+  color: #53d8eb;
+}
+
+.switchContent span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.switchContent strong {
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.switchContent small {
+  color: #7897a8;
+  line-height: 1.45;
+}
+
+.switchCard input {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+
+  accent-color: #4bd4e8;
+}
+
+.confidenceSection {
+  max-width: 760px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.confidenceHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.confidenceHeader > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.confidenceHeader strong {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.confidenceHeader small {
+  color: #7897a8;
+}
+
+.confidenceHeader > span {
+  color: #5ce0ed;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.confidenceSection input {
+  width: 100%;
+  accent-color: #4bd4e8;
+}
+
+.rangeLabels {
+  display: flex;
+  justify-content: space-between;
+
+  color: #678897;
+  font-size: 10px;
+}
+
+.footerActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 11px;
+}
+
+.lastUpdated {
+  margin: -8px 0 0;
+
+  color: #668695;
+  font-size: 11px;
+  text-align: right;
+}
+
+.loadingState {
+  min-height: 120px;
+
+  color: #7897a8;
+
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 1100px) {
+  .formGrid,
+  .switchGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .formGrid,
+  .switchGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .footerActions {
+    flex-direction: column;
+  }
+
+  .footerActions > * {
+    width: 100%;
+  }
+
+  .confidenceHeader {
+    flex-direction: column;
+  }
+
+  .lastUpdated {
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   PERFIL DEL USUARIO
+========================================================= */
+
+.profileRow {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) auto;
+
+  align-items: end;
+  gap: 14px;
+}
+
+.profileRow > label {
+  color: #bed3dd;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profileRow input {
+  width: 100%;
+  min-height: 43px;
+
+  padding: 0 13px;
+
+  border:
+    1px solid
+    rgba(88, 151, 180, 0.29);
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background:
+    rgba(5, 24, 38, 0.88);
+
+  color: #edf8fb;
+
+  font: inherit;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.profileRow input:focus {
+  border-color:
+    rgba(78, 214, 232, 0.65);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(59, 206, 226, 0.08);
+}
+
+
+/* =========================================================
+   BOTONES DEL PERFIL
+========================================================= */
+
+.profileActions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.profileSaveButton {
+  min-height: 40px;
+
+  padding: 0 15px;
+
+  border: 0;
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #55d8eb,
+      #6ce5c4
+    );
+
+  color: #062735;
+
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.profileSaveButton:hover:not(:disabled) {
+  transform:
+    translateY(-1px);
+}
+
+.profileSaveButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   INFORMACIÓN DEL PERFIL
+========================================================= */
+
+.profileInfo {
+  margin-top: 14px;
+
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+.profileInfo > div {
+  min-height: 65px;
+
+  padding: 12px;
+
+  border:
+    1px solid
+    rgba(77, 139, 164, 0.18);
+
+  border-radius: 11px;
+
+  background:
+    rgba(5, 26, 39, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.profileInfo span {
+  color: #718f9e;
+
+  font-size: 9px;
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+.profileInfo strong {
+  color: #edf8fb;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   MENSAJES DEL PERFIL
+========================================================= */
+
+.profileSuccess,
+.profileError {
+  margin-top: 12px;
+
+  padding: 10px 12px;
+
+  border-radius: 9px;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  font-size: 10px;
+}
+
+.profileSuccess {
+  border:
+    1px solid
+    rgba(87, 217, 171, 0.28);
+
+  background:
+    rgba(25, 90, 70, 0.35);
+
+  color: #83e7c1;
+}
+
+.profileError {
+  border:
+    1px solid
+    rgba(236, 93, 113, 0.28);
+
+  background:
+    rgba(89, 29, 40, 0.36);
+
+  color: #ffcbd4;
+}
+
+
+/* =========================================================
+   RESPONSIVE PERFIL
+========================================================= */
+
+@media (max-width: 750px) {
+  .profileRow {
+    grid-template-columns: 1fr;
+  }
+
+  .profileActions {
+    width: 100%;
+  }
+
+  .profileActions > button {
+    flex: 1;
+  }
+
+  .profileInfo {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .profileActions {
+    flex-direction: column;
+  }
+
+  .profileActions > button {
+    width: 100%;
+  }
+}
+
+
+
+/* =========================================================
+   PERFIL DEL USUARIO
+========================================================= */
+
+.profileRow {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) auto;
+
+  align-items: end;
+  gap: 14px;
+}
+
+.profileRow > label {
+  color: #bed3dd;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profileRow input {
+  width: 100%;
+  min-height: 43px;
+
+  padding: 0 13px;
+
+  border:
+    1px solid
+    rgba(88, 151, 180, 0.29);
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background:
+    rgba(5, 24, 38, 0.88);
+
+  color: #edf8fb;
+
+  font: inherit;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.profileRow input:focus {
+  border-color:
+    rgba(78, 214, 232, 0.65);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(59, 206, 226, 0.08);
+}
+
+
+/* =========================================================
+   BOTONES DEL PERFIL
+========================================================= */
+
+.profileActions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.profileSaveButton {
+  min-height: 40px;
+
+  padding: 0 15px;
+
+  border: 0;
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #55d8eb,
+      #6ce5c4
+    );
+
+  color: #062735;
+
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.profileSaveButton:hover:not(:disabled) {
+  transform:
+    translateY(-1px);
+}
+
+.profileSaveButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   INFORMACIÓN DEL PERFIL
+========================================================= */
+
+.profileInfo {
+  margin-top: 14px;
+
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+.profileInfo > div {
+  min-height: 65px;
+
+  padding: 12px;
+
+  border:
+    1px solid
+    rgba(77, 139, 164, 0.18);
+
+  border-radius: 11px;
+
+  background:
+    rgba(5, 26, 39, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.profileInfo span {
+  color: #718f9e;
+
+  font-size: 9px;
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+.profileInfo strong {
+  color: #edf8fb;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   MENSAJES DEL PERFIL
+========================================================= */
+
+.profileSuccess,
+.profileError {
+  margin-top: 12px;
+
+  padding: 10px 12px;
+
+  border-radius: 9px;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  font-size: 10px;
+}
+
+.profileSuccess {
+  border:
+    1px solid
+    rgba(87, 217, 171, 0.28);
+
+  background:
+    rgba(25, 90, 70, 0.35);
+
+  color: #83e7c1;
+}
+
+.profileError {
+  border:
+    1px solid
+    rgba(236, 93, 113, 0.28);
+
+  background:
+    rgba(89, 29, 40, 0.36);
+
+  color: #ffcbd4;
+}
+
+
+/* =========================================================
+   RESPONSIVE PERFIL
+========================================================= */
+
+@media (max-width: 750px) {
+  .profileRow {
+    grid-template-columns: 1fr;
+  }
+
+  .profileActions {
+    width: 100%;
+  }
+
+  .profileActions > button {
+    flex: 1;
+  }
+
+  .profileInfo {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .profileActions {
+    flex-direction: column;
+  }
+
+  .profileActions > button {
+    width: 100%;
+  }
+}
